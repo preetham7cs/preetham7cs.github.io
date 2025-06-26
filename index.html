@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Data & AI Consultant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f3;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(245, 245, 243, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c2c2c;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #666;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #2c2c2c;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main content */
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 6rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #2c2c2c;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-tile {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .project-tile h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+        }
+
+        .project-tile p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .project-tile::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #2c2c2c, #666);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-tile:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Project Modal */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-modal.active {
+            display: flex;
+        }
+
+        .project-modal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #2c2c2c;
+        }
+
+        .modal-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c2c2c;
+        }
+
+        .modal-content .project-details {
+            color: #555;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-3px);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            color: #666;
+        }
+
+        .skill-category li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            color: #2c2c2c;
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #2c2c2c;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: #2c2c2c;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .modal-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Your Name</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#links">Other Links</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Data & AI Consultant</h1>
+                <p class="subtitle">Delivering scalable data automation and AI-powered solutions across fintech, insurance, and regulatory domains</p>
+            </section>
+
+            <section id="about" class="section">
+                <h2 class="section-title">About</h2>
+                <div class="about-content">
+                    <p>Data & AI Consultant with 4+ years of experience delivering data automation and AI-powered solutions in fintech, insurance, and regulatory domains. Skilled in building scalable cloud architectures, integrating LLMs, and leading cross-functional teams.</p>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-tile" data-project="gcp-workflows">
+                        <h3>Automated Data Workflows</h3>
+                        <p>GCP, Vertex AI and Python solutions for automated data processing and workflow management.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="streamlit-platform">
+                        <h3>Data Configuration Platform</h3>
+                        <p>Drag-and-drop data configuration platform using Streamlit for Solidatus.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="llm-pipeline">
+                        <h3>LLM-Driven Code Generation</h3>
+                        <p>Pipeline converting complex business rules to code snippets using advanced language models.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="claude-reports">
+                        <h3>Claude-Based Report Generation</h3>
+                        <p>Automated connection reports for Legacy Systems using Claude AI technology.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="llm-scraper">
+                        <h3>Containerized LLM Scraper</h3>
+                        <p>High-performance data extraction solution achieving 90% faster processing times.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="trade-mapping">
+                        <h3>Trade-Term Mapping Solution</h3>
+                        <p>GPT API-powered automation reducing task completion time by 90%.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="browser-automation">
+                        <h3>Multimodal AI Browser Automation</h3>
+                        <p>Intelligent browser automation for insurer portal interaction and data processing.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="langchain-parsing">
+                        <h3>LangChain Data Quality Extraction</h3>
+                        <p>Advanced parsing solution for unstructured data quality assessment and extraction.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="axiom-connector">
+                        <h3>Axiom Connector</h3>
+                        <p>Engineered solution reducing reporting cycles by 50% through optimized data connections.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="ml-turbine">
+                        <h3>Turbine Failure Detection</h3>
+                        <p>Machine Learning solution for predictive maintenance, detecting failures 24 hours early.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="regulatory-reporting">
+                        <h3>Regulatory Reporting Acceleration</h3>
+                        <p>Built 1000+ lineage models for large banks to streamline regulatory compliance.</p>
+                    </div>
+                    
+                    <div class="project-tile" data-project="powerbi-nlp">
+                        <h3>Power BI NLP Dashboards</h3>
+                        <p>Advanced analytics dashboards reducing survey analysis effort by 50%.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Cloud & Data</h3>
+                        <ul>
+                            <li>Google Cloud Platform</li>
+                            <li>Vertex AI</li>
+                            <li>Data Pipelines</li>
+                            <li>ETL/ELT</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI & ML</h3>
+                        <ul>
+                            <li>Large Language Models</li>
+                            <li>LangChain</li>
+                            <li>GPT API</li>
+                            <li>Claude AI</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Streamlit</li>
+                            <li>Power BI</li>
+                            <li>NLP</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-content">
+                    <p>Let's discuss how we can work together on your next data and AI project.</p>
+                    <div class="contact-links">
+                        <a href="mailto:your.email@example.com">Email</a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="links" class="section">
+                <h2 class="section-title">Other Links</h2>
+                <div class="contact-content">
+                    <div class="contact-links">
+                        <a href="#" target="_blank">Blog</a>
+                        <a href="#" target="_blank">Resume</a>
+                        <a href="#" target="_blank">Portfolio</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h3 id="modalTitle">Project Title</h3>
+            <div class="project-details" id="modalContent">
+                Project details will appear here...
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Project details data
+        const projectDetails = {
+            'gcp-workflows': {
+                title: 'Automated Data Workflows with GCP, Vertex AI and Python',
+                content: `
+                    <p>Developed comprehensive automated data workflows leveraging Google Cloud Platform's robust infrastructure and Vertex AI's machine learning capabilities.</p>
+                    
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Mentored teams in hands-on solution design, accelerating prototyping phases</li>
+                        <li>Implemented scalable data processing pipelines using GCP services</li>
+                        <li>Integrated Vertex AI for intelligent data processing and analysis</li>
+                        <li>Reduced manual intervention by 80% through intelligent automation</li>
+                    </ul>
+                    
+                    <h4>Technologies Used:</h4>
+                    <p>Google Cloud Platform, Vertex AI, Python, Cloud Functions, BigQuery, Cloud Storage</p>
+                `
+            },
+            'streamlit-platform': {
+                title: 'Drag-and-Drop Data Configuration Platform',
+                content: `
+                    <p>Built an intuitive drag-and-drop data configuration platform using Streamlit for Solidatus, enabling non-technical users to configure complex data workflows.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Intuitive drag-and-drop interface for data mapping</li>
+                        <li>Real-time configuration validation</li>
+                        <li>Automated code generation from visual configurations</li>
+                        <li>Integration with existing Solidatus infrastructure</li>
+                    </ul>
+                    
+                    <h4>Impact:</h4>
+                    <p>Reduced configuration time by 70% and enabled business users to create data workflows independently.</p>
+                `
+            },
+            'llm-pipeline': {
+                title: 'LLM-Driven Pipeline for Business Rules Conversion',
+                content: `
+                    <p>Designed and implemented an advanced pipeline that converts complex business rules into executable code snippets using Large Language Models.</p>
+                    
+                    <h4>Technical Implementation:</h4>
+                    <ul>
+                        <li>Natural language processing of business requirements</li>
+                        <li>Rule parsing and semantic analysis</li>
+                        <li>Code generation with multiple language support</li>
+                        <li>Automated testing and validation framework</li>
+                    </ul>
+                    
+                    <h4>Results:</h4>
+                    <p>Achieved 85% accuracy in code generation and reduced development time for business logic implementation by 60%.</p>
+                `
+            },
+            'claude-reports': {
+                title: 'Claude-Based Connection Reports for Legacy Systems',
+                content: `
+                    <p>Developed an intelligent reporting system using Claude AI to generate comprehensive connection reports for legacy system integration.</p>
+                    
+                    <h4>System Capabilities:</h4>
+                    <ul>
+                        <li>Automated analysis of legacy system architectures</li>
+                        <li>Intelligent connection mapping and documentation</li>
+                        <li>Risk assessment and compliance reporting</li>
+                        <li>Integration recommendation engine</li>
+                    </ul>
+                    
+                    <h4>Business Value:</h4>
+                    <p>Reduced manual documentation effort by 90% and improved system integration planning accuracy.</p>
+                `
+            },
+            'llm-scraper': {
+                title: 'Containerized LLM Scraper for Insurer Data',
+                content: `
+                    <p>Built a high-performance, containerized data extraction solution specifically designed for insurance industry data processing.</p>
+                    
+                    <h4>Architecture:</h4>
+                    <ul>
+                        <li>Docker containerization for scalable deployment</li>
+                        <li>LLM-powered intelligent data extraction</li>
+                        <li>Real-time processing capabilities</li>
+                        <li>Fault-tolerant error handling and recovery</li>
+                    </ul>
+                    
+                    <h4>Performance:</h4>
+                    <p>Achieved 90% faster data extraction compared to traditional methods, processing thousands of insurance documents daily.</p>
+                `
+            },
+            'trade-mapping': {
+                title: 'Automated Trade-Term Mapping Solution',
+                content: `
+                    <p>Implemented an intelligent mapping solution using GPT APIs to automate the complex process of trade term standardization and mapping.</p>
+                    
+                    <h4>Solution Components:</h4>
+                    <ul>
+                        <li>GPT API integration for semantic understanding</li>
+                        <li>Trade terminology database and matching algorithms</li>
+                        <li>Confidence scoring and manual review workflows</li>
+                        <li>Continuous learning and model improvement</li>
+                    </ul>
+                    
+                    <h4>Efficiency Gains:</h4>
+                    <p>Reduced task completion time by 90%, enabling faster trade processing and improved accuracy in financial operations.</p>
+                `
+            },
+            'browser-automation': {
+                title: 'Multimodal AI Browser Automation',
+                content: `
+                    <p>Developed sophisticated browser automation system for insurer portal interaction using multimodal AI capabilities.</p>
+                    
+                    <h4>Advanced Features:</h4>
+                    <ul>
+                        <li>Computer vision for UI element recognition</li>
+                        <li>Natural language understanding for form filling</li>
+                        <li>Adaptive navigation based on portal changes</li>
+                        <li>Error detection and recovery mechanisms</li>
+                    </ul>
+                    
+                    <h4>Use Cases:</h4>
+                    <p>Automated policy data extraction, claim processing, and regulatory reporting across multiple insurer portals.</p>
+                `
+            },
+            'langchain-parsing': {
+                title: 'LangChain Parsing for Unstructured Data Quality',
+                content: `
+                    <p>Implemented advanced parsing solution using LangChain framework for comprehensive data quality assessment and extraction from unstructured sources.</p>
+                    
+                    <h4>Technical Stack:</h4>
+                    <ul>
+                        <li>LangChain framework for document processing</li>
+                        <li>Multi-format document support (PDF, Word, Excel)</li>
+                        <li>Quality scoring algorithms</li>
+                        <li>Automated data validation and cleansing</li>
+                    </ul>
+                    
+                    <h4>Outcomes:</h4>
+                    <p>Improved data quality assessment accuracy by 75% and reduced manual data review time significantly.</p>
+                `
+            },
+            'axiom-connector': {
+                title: 'Axiom Connector Engineering',
+                content: `
+                    <p>Engineered high-performance Axiom connector that dramatically improved reporting cycle efficiency for enterprise clients.</p>
+                    
+                    <h4>Engineering Excellence:</h4>
+                    <ul>
+                        <li>Optimized data connection protocols</li>
+                        <li>Parallel processing implementation</li>
+                        <li>Advanced caching mechanisms</li>
+                        <li>Real-time monitoring and alerting</li>
+                    </ul>
+                    
+                    <h4>Business Impact:</h4>
+                    <p>Achieved 50% reduction in reporting cycles, enabling faster business decision-making and improved operational efficiency.</p>
+                `
+            },
+            'ml-turbine': {
+                title: 'Machine Learning Turbine Failure Detection',
+                content: `
+                    <p>Developed predictive maintenance solution using machine learning to detect turbine failures 24 hours before occurrence.</p>
+                    
+                    <h4>ML Implementation:</h4>
+                    <ul>
+                        <li>Time-series analysis of sensor data</li>
+                        <li>Anomaly detection algorithms</li>
+                        <li>Predictive modeling with ensemble methods</li>
+                        <li>Real-time alerting system</li>
+                    </ul>
+                    
+                    <h4>Results:</h4>
+                    <p>Achieved 95% accuracy in failure prediction, preventing costly downtime and reducing maintenance costs by 40%.</p>
+                `
+            },
+            'regulatory-reporting': {
+                title: 'Regulatory Reporting Acceleration for Banks',
+                content: `
+                    <p>Accelerated regulatory reporting processes for large banking institutions by building comprehensive data lineage models.</p>
+                    
+                    <h4>Scale of Implementation:</h4>
+                    <ul>
+                        <li>Built 1000+ detailed lineage models</li>
+                        <li>Covered multiple regulatory frameworks</li>
+                        <li>Automated compliance checking</li>
+                        <li>Risk assessment and monitoring</li>
+                    </ul>
+                    
+                    <h4>Compliance Impact:</h4>
+                    <p>Improved regulatory reporting accuracy and reduced compliance risk exposure for major financial institutions.</p>
+                `
+            },
+            'powerbi-nlp': {
+                title: 'Power BI NLP Dashboards',
+                content: `
+                    <p>Developed advanced analytics dashboards combining Power BI visualization capabilities with natural language processing for survey analysis.</p>
+                    
+                    <h4>Dashboard Features:</h4>
+                    <ul>
+                        <li>Real-time sentiment analysis</li>
+                        <li>Automated theme extraction</li>
+                        <li>Interactive visualizations</li>
+                        <li>Trend analysis and forecasting</li>
+                    </ul>
+                    
+                    <h4>Efficiency Improvement:</h4>
+                    <p>Reduced survey analysis effort by 50% while providing deeper insights through automated text analysis and visualization.</p>
+                `
+            }
+        };
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for section animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Project modal functionality
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+
+        document.querySelectorAll('.project-tile').forEach(tile => {
+            tile.addEventListener('click', function() {
+                const projectKey = this.dataset.project;
+                const project = projectDetails[projectKey];
+                
+                if (project) {
+                    modalTitle.textContent = project.title;
+                    modalContent.innerHTML = project.content;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on background click
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Add some initial animation delay
+        setTimeout(() => {
+            document.querySelector('.hero').style.opacity = '1';
+            document.querySelector('.hero').style.transform = 'translateY(0)';
+        }, 100);
+    </script>
+</body>
+</html>
