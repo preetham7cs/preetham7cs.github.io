@@ -31,8 +31,10 @@
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -83,12 +85,14 @@
         /* Main content */
         main {
             margin-top: 80px;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            padding: 0 1rem;
         }
 
         /* Hero Section */
@@ -147,12 +151,15 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
         }
 
         .project-tile {
+            display: flex;
+            flex-direction: column;
+            min-height: 340px;
             background: white;
             border-radius: 12px;
             padding: 2rem;
@@ -337,7 +344,13 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
             .nav-links {
                 gap: 1rem;
             }
