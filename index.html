@@ -765,91 +765,24 @@
             'gcp-workflows': {
                 title: 'Automated Data Workflows with GCP, Vertex AI and Python',
                 content: `
-        
-
                     <ul>
-
                         <li>Built an AI-powered document processor using Vertex AI and Document AI to auto-extract key fields from invoices and contracts, triggered seamlessly on file upload to Cloud Storage.</li>
                         <li>Developed a Streamlit-based chatbot powered by LLMs and RAG, capable of answering documentation-related queries and learning from past conversations to improve contextual responses.</li>
                         <li>Created a smart data validator using Cloud Functions to run DQ checks on uploaded files, logging errors and cleaned outputs into BigQuery for scalable reporting.</li>
-                        
-
-                    </ul>
-
-                `
+                    </ul> `
             },
-            'adaptive-browser-agent': {
-                title: 'Adaptive Browser Automation POC',
+
+            'claude-reports': {
+                title: 'Claude-Based Report Generation for Legacy Systems',
                 content: `
-
-                    <ul>
-
-                        <li>In the extranet-aggregator quote flow every insurer site needed custom RPA scripts, leading to long build cycles and fragile maintenance.</li>
-                        <li>Engineered an "Adaptive Browser Agent" marrying modern automation APIs with a multi-modal LLM that sees the page and turns plain-English commands into actions.</li>
-                        <li>Showcased an end-to-end quote demo, prompting a rethink of future automation tooling in favour of this flexible, ML-driven approach.</li>
-
-                    </ul>
-
-                `
-            },
-            'mentorship-leadership': {
-                title: 'Mentorship and Scalable Solution Leadership',
-                content: `
-               
-
-                    <ul>
-                        <li>Actively mentored junior and mid-level team members across automation and data projects, pairing on complex tasks and providing regular check-ins.</li>
-                        <li>Owned onboarding for new joiners, walking them through tools, designs and client context so they could contribute confidently.</li>
-                        <li>Led internal knowledge-sharing sessions and maintained reusable workflows, enabling consistent delivery while reducing dependency on senior staff.</li>
-                    </ul>
-              
-
-                `
-            },
-            'rule-to-js': {
-                title: 'Business Rule-to-JavaScript Converter',
-                content: `
-                  
-
-                    <ul>
-                        <li>Managing insurer portal behaviour required large volumes of JavaScript for calculations, conditional flows and validations.</li>
-                        <li>Designed an automated converter using Python and a local LLM to turn structured rules into validated JavaScript, JSON parameters and automated tests.</li>
-                        <li>Reduced implementation time from two weeks to two days while keeping all processing secure on local infrastructure.</li>
-
-                    </ul>
-    
-
-                `
-            },
-            'insurer-automation': {
-                title: 'Insurer Site Automation and Logic Engineering',
-                content: `
-                  
-
-                    <ul>
-                        <li>Contributed to an automation initiative that mapped dynamic insurer question sets in Airtable to internal product parameters executed via Selenium.</li>
-                        <li>Supported JavaScript logic for validations, conditional behaviour and calculated fields.</li>
-                        <li>Helped build Selenium-based tests to streamline QA and ensure consistency across insurer platforms.</li>
-
-                    </ul>
-                   
-
-                `
-            },
-            'fraxses-layer': {
-                title: 'Unified Data Access Layer (Beneficient)',
-                content: `
-               
-
-                    <ul>
-                        <li>Partnered with Beneficient Group to implement a scalable data workbench in Fraxses for virtual access to distributed datasets.</li>
-                        <li>Designed and deployed federated models that unified disparate data sources into consumable tables and views.</li>
-                        <li>Reduced data access time and empowered business users with governed datasets for faster reporting.</li>
-
-                    </ul>
-                     `
-
+                   <ul>
+                      <li>Legacy desktop models, methodology docs, and R scripts had unclear interconnections with no consistent way to map relationships, making automation difficult.</li>
+                      <li>Built a Claude-based multi-step solution to extract and link unstructured elements, generating structured relationship tables.</li>
+                      <li>Cut manual effort and inconsistency by accelerating cross-component mapping and improving system integration.</li>
+                   </ul> `
             }
+
+            
         };
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
