@@ -200,6 +200,14 @@
             overflow: hidden;
         }
 
+        .project-tile img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 1rem;
+        }
+
         .project-tile:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0,0,0,0.12);
@@ -427,6 +435,55 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#links">Other Links</a></li>
+                        <img src="images/1.jpg" alt="Pro Scraper – Data Extraction from Insurer Sites">
+                        <img src="images/2.jpg" alt="Semantic Mapper for Trade Descriptions Mapping">
+                        <img src="images/3.jpg" alt="Adaptive Browser Automation POC">
+                        <img src="images/4.jpg" alt="Mentorship and Scalable Solution Leadership">
+                        <img src="images/5.jpg" alt="Business Rule-to-JavaScript Converter">
+                        <img src="images/6.jpg" alt="Insurer Site Automation and Logic Engineering">
+                        <img src="images/7.jpg" alt="Unified Data Access Layer (Beneficient)">
+                        <img src="images/8.jpg" alt="Automated Data Integration Solutions (Solidatus)">
+                        <img src="images/9.jpg" alt="Accelerated Root Cause Analysis (Mitsubishi)">
+                        <img src="images/10.jpg" alt="Strengthened Regulatory Compliance (BNYM)">
+                        <img src="images/11.jpg" alt="Transformed Global Markets Architecture (BOFA)">
+                        <img src="images/12.jpg" alt="Engineered the Custom Connector (Axiom)">
+                        <img src="images/13.jpg" alt="Enhanced Regulatory Design (LSEG)">
+
+                    <div class="project-tile" data-project="gcp-workflows">
+                        <img src="images/14.jpg" alt="Automated Data Workflows">
+                        <h3>Automated Data Workflows</h3>
+                        <p>GCP, Vertex AI and Python solutions for automated data processing and workflow management.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="streamlit-platform">
+                        <img src="images/15.jpg" alt="Data Configuration Platform">
+                        <h3>Data Configuration Platform</h3>
+                        <p>Drag-and-drop data configuration platform using Streamlit for Solidatus.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="llm-pipeline">
+                        <img src="images/16.jpg" alt="LLM-Driven Code Generation">
+                        <h3>LLM-Driven Code Generation</h3>
+                        <p>Pipeline converting complex business rules to code snippets using advanced language models.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="claude-reports">
+                        <img src="images/17.jpg" alt="Claude-Based Report Generation">
+                        <h3>Claude-Based Report Generation</h3>
+                        <p>Automated connection reports for Legacy Systems using Claude AI technology.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="llm-scraper">
+                        <img src="images/18.jpg" alt="Containerized LLM Scraper">
+                        <h3>Containerized LLM Scraper</h3>
+                        <p>High-performance data extraction solution achieving 90% faster processing times.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="trade-mapping">
+                        <img src="images/19.jpg" alt="Trade-Term Mapping Solution">
+                        <h3>Trade-Term Mapping Solution</h3>
+                        <p>GPT API-powered automation reducing task completion time by 90%.</p>
+                    </div>
             </ul>
         </div>
     </nav>
@@ -702,6 +759,96 @@
                     </ul>
                 `
             },
+            },
+            'gcp-workflows': {
+                title: 'Automated Data Workflows with GCP, Vertex AI and Python',
+                content: `
+                    <p>Developed comprehensive automated data workflows leveraging Google Cloud Platform's infrastructure and Vertex AI.</p>
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Mentored teams in hands-on solution design, accelerating prototyping phases</li>
+                        <li>Implemented scalable data processing pipelines using GCP services</li>
+                        <li>Integrated Vertex AI for intelligent data processing and analysis</li>
+                        <li>Reduced manual intervention by 80% through intelligent automation</li>
+                    </ul>
+                    <h4>Technologies Used:</h4>
+                    <p>Google Cloud Platform, Vertex AI, Python, Cloud Functions, BigQuery, Cloud Storage</p>
+                `
+            },
+            'streamlit-platform': {
+                title: 'Drag-and-Drop Data Configuration Platform',
+                content: `
+                    <p>Built an intuitive drag-and-drop data configuration platform using Streamlit for Solidatus.</p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Intuitive drag-and-drop interface for data mapping</li>
+                        <li>Real-time configuration validation</li>
+                        <li>Automated code generation from visual configurations</li>
+                        <li>Integration with existing Solidatus infrastructure</li>
+                    </ul>
+                    <h4>Impact:</h4>
+                    <p>Reduced configuration time by 70% and enabled business users to create data workflows independently.</p>
+                `
+            },
+            'llm-pipeline': {
+                title: 'LLM-Driven Pipeline for Business Rules Conversion',
+                content: `
+                    <p>Designed and implemented an advanced pipeline that converts complex business rules into executable code snippets using Large Language Models.</p>
+                    <h4>Technical Implementation:</h4>
+                    <ul>
+                        <li>Natural language processing of business requirements</li>
+                        <li>Rule parsing and semantic analysis</li>
+                        <li>Code generation with multiple language support</li>
+                        <li>Automated testing and validation framework</li>
+                    </ul>
+                    <h4>Results:</h4>
+                    <p>Achieved 85% accuracy in code generation and reduced development time for business logic implementation by 60%.</p>
+                `
+            },
+            'claude-reports': {
+                title: 'Claude-Based Connection Reports for Legacy Systems',
+                content: `
+                    <p>Developed an intelligent reporting system using Claude AI to generate comprehensive connection reports for legacy system integration.</p>
+                    <h4>System Capabilities:</h4>
+                    <ul>
+                        <li>Automated analysis of legacy system architectures</li>
+                        <li>Intelligent connection mapping and documentation</li>
+                        <li>Risk assessment and compliance reporting</li>
+                        <li>Integration recommendation engine</li>
+                    </ul>
+                    <h4>Business Value:</h4>
+                    <p>Reduced manual documentation effort by 90% and improved system integration planning accuracy.</p>
+                `
+            },
+            'llm-scraper': {
+                title: 'Containerized LLM Scraper for Insurer Data',
+                content: `
+                    <p>Built a high-performance, containerized data extraction solution specifically designed for insurance industry data processing.</p>
+                    <h4>Architecture:</h4>
+                    <ul>
+                        <li>Docker containerization for scalable deployment</li>
+                        <li>LLM-powered intelligent data extraction</li>
+                        <li>Real-time processing capabilities</li>
+                        <li>Fault-tolerant error handling and recovery</li>
+                    </ul>
+                    <h4>Performance:</h4>
+                    <p>Achieved 90% faster data extraction compared to traditional methods, processing thousands of insurance documents daily.</p>
+                `
+            },
+            'trade-mapping': {
+                title: 'Automated Trade-Term Mapping Solution',
+                content: `
+                    <p>Implemented an intelligent mapping solution using GPT APIs to automate trade term standardization and mapping.</p>
+                    <h4>Solution Components:</h4>
+                    <ul>
+                        <li>GPT API integration for semantic understanding</li>
+                        <li>Trade terminology database and matching algorithms</li>
+                        <li>Confidence scoring and manual review workflows</li>
+                        <li>Continuous learning and model improvement</li>
+                    </ul>
+                    <h4>Efficiency Gains:</h4>
+                    <p>Reduced task completion time by 90%, enabling faster trade processing and improved accuracy in financial operations.</p>
+                `
             'insurer-automation': {
                 title: 'Insurer Site Automation and Logic Engineering',
                 content: `
