@@ -31,8 +31,10 @@
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -83,22 +85,50 @@
         /* Main content */
         main {
             margin-top: 80px;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            padding: 0 1rem;
         }
 
         /* Hero Section */
         .hero {
-            text-align: center;
-            padding: 4rem 0 6rem;
+            padding: 6rem 0 6rem;
         }
 
-        .hero h1 {
+        .hero-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-left {
+            flex: 1;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-name {
             font-size: 3rem;
+            font-weight: 300;
+            color: #2c2c2c;
+        }
+
+        .hero-right {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-right h2 {
+            font-size: 2.2rem;
             font-weight: 300;
             margin-bottom: 1rem;
             color: #2c2c2c;
@@ -109,8 +139,6 @@
             color: #666;
             margin-bottom: 2rem;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         /* Sections */
@@ -134,11 +162,16 @@
             color: #2c2c2c;
         }
 
+        .about-title {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
         /* About Section */
         .about-content {
             max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            margin: 0;
+            text-align: left;
             font-size: 1.1rem;
             line-height: 1.8;
             color: #555;
@@ -147,12 +180,16 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
         }
 
         .project-tile {
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            aspect-ratio: 3 / 4;
             background: white;
             border-radius: 12px;
             padding: 2rem;
@@ -161,6 +198,14 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+        }
+
+        .project-tile img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 1rem;
         }
 
         .project-tile:hover {
@@ -337,13 +382,30 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-right {
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 600px) {
             .nav-links {
                 gap: 1rem;
             }
 
-            .hero h1 {
+            .hero-name {
                 font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            .hero-right h2 {
+                font-size: 1.6rem;
             }
 
             .projects-grid {
@@ -378,79 +440,137 @@
 
     <main>
         <div class="container">
-            <section class="hero">
-                <h1>Data & AI Consultant</h1>
-                <p class="subtitle">Delivering scalable data automation and AI-powered solutions across fintech, insurance, and regulatory domains</p>
-            </section>
-
-            <section id="about" class="section">
-                <h2 class="section-title">About</h2>
-                <div class="about-content">
-                    <p>Data & AI Consultant with 4+ years of experience delivering data automation and AI-powered solutions in fintech, insurance, and regulatory domains. Skilled in building scalable cloud architectures, integrating LLMs, and leading cross-functional teams.</p>
+            <section class="hero" id="about">
+                <div class="hero-container">
+                    <div class="hero-left">
+                        <h1 class="hero-name">Preetham Shylendhra</h1>
+                    </div>
+                    <div class="hero-right">
+                        <h2>Data &amp; AI Consultant</h2>
+                        <p class="subtitle">Delivering scalable data automation and AI-powered solutions across fintech, insurance, and regulatory domains</p>
+                        <h2 class="section-title about-title">About</h2>
+                        <div class="about-content">
+                            <p>Data &amp; AI Consultant with 4+ years of experience delivering data automation and AI-powered solutions in fintech, insurance, and regulatory domains. Skilled in building scalable cloud architectures, integrating LLMs, and leading cross-functional teams.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section id="projects" class="section">
                 <h2 class="section-title">Projects</h2>
                 <div class="projects-grid">
+                    <div class="project-tile" data-project="pro-scraper">
+                        <img src="images/1.jpg" alt="Pro Scraper – Data Extraction from Insurer Sites">
+                        <h3>Pro Scraper – Data Extraction from Insurer Sites</h3>
+                        <p>LLM-powered console tool converting insurer HTML to structured JSON, cutting extraction time from weeks to days.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="semantic-mapper">
+                        <img src="images/2.jpg" alt="Semantic Mapper for Trade Descriptions Mapping">
+                        <h3>"Semantic Mapper" for Trade Descriptions Mapping</h3>
+                        <p>Local LLM solution aligning trade descriptions with a master list for quick, accurate mappings.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="adaptive-browser-agent">
+                        <img src="images/3.jpg" alt="Adaptive Browser Automation POC">
+                        <h3>Adaptive Browser Automation POC</h3>
+                        <p>Multimodal agent translating plain-English commands into actions for flexible portal automation.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="mentorship-leadership">
+                        <img src="images/4.jpg" alt="Mentorship and Scalable Solution Leadership">
+                        <h3>Mentorship and Scalable Solution Leadership</h3>
+                        <p>Guided teams through reusable workflows and documentation, enabling rapid onboarding and delivery.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="rule-to-js">
+                        <img src="images/5.jpg" alt="Business Rule-to-JavaScript Converter">
+                        <h3>Business Rule-to-JavaScript Converter</h3>
+                        <p>Python tool generating validated JavaScript and tests from structured business rules.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="insurer-automation">
+                        <img src="images/6.jpg" alt="Insurer Site Automation and Logic Engineering">
+                        <h3>Insurer Site Automation and Logic Engineering</h3>
+                        <p>Selenium-driven flows mapping question sets to product parameters with reliable validation logic.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="fraxses-layer">
+                        <img src="images/7.jpg" alt="Unified Data Access Layer (Beneficient)">
+                        <h3>Unified Data Access Layer (Beneficient)</h3>
+                        <p>Federated Fraxses models giving governed, virtual access to distributed datasets.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="solidatus-ingestion">
+                        <img src="images/8.jpg" alt="Automated Data Integration Solutions (Solidatus)">
+                        <h3>Automated Data Integration Solutions (Solidatus)</h3>
+                        <p>Configurable connectors standardising file ingestion into Solidatus, reclaiming 200+ hours monthly.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="predictive-maintenance">
+                        <img src="images/9.jpg" alt="Accelerated Root Cause Analysis (Mitsubishi)">
+                        <h3>Accelerated Root Cause Analysis (Mitsubishi)</h3>
+                        <p>WPS Analytics models forecasting turbine failures 24 hours early to speed root cause analysis.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="regulatory-compliance">
+                        <img src="images/10.jpg" alt="Strengthened Regulatory Compliance (BNYM)">
+                        <h3>Strengthened Regulatory Compliance (BNYM)</h3>
+                        <p>Developed 250+ data lineage models for transparent, reliable reporting at BNYM.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="markets-architecture">
+                        <img src="images/11.jpg" alt="Transformed Global Markets Architecture (BOFA)">
+                        <h3>Transformed Global Markets Architecture (BOFA)</h3>
+                        <p>Automated diagrams of 400+ systems with scheduled updates for informed decision making.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="axiom-connector">
+                        <img src="images/12.jpg" alt="Engineered the Custom Connector (Axiom)">
+                        <h3>Engineered the Custom Connector (Axiom)</h3>
+                        <p>Reusable pipeline integrating Axiom with regulatory tools, halving reporting cycles.</p>
+                    </div>
+
+                    <div class="project-tile" data-project="regulatory-design">
+                        <img src="images/13.jpg" alt="Enhanced Regulatory Design (LSEG)">
+                        <h3>Enhanced Regulatory Design (LSEG)</h3>
+                        <p>Power BI and NLP analysis revealing sentiment trends and reducing survey effort by 50%.</p>
+                    </div>
+
                     <div class="project-tile" data-project="gcp-workflows">
+                        <img src="images/14.jpg" alt="Automated Data Workflows">
                         <h3>Automated Data Workflows</h3>
                         <p>GCP, Vertex AI and Python solutions for automated data processing and workflow management.</p>
                     </div>
-                    
+
                     <div class="project-tile" data-project="streamlit-platform">
+                        <img src="images/15.jpg" alt="Data Configuration Platform">
                         <h3>Data Configuration Platform</h3>
                         <p>Drag-and-drop data configuration platform using Streamlit for Solidatus.</p>
                     </div>
-                    
+
                     <div class="project-tile" data-project="llm-pipeline">
+                        <img src="images/16.jpg" alt="LLM-Driven Code Generation">
                         <h3>LLM-Driven Code Generation</h3>
                         <p>Pipeline converting complex business rules to code snippets using advanced language models.</p>
                     </div>
-                    
+
                     <div class="project-tile" data-project="claude-reports">
+                        <img src="images/17.jpg" alt="Claude-Based Report Generation">
                         <h3>Claude-Based Report Generation</h3>
                         <p>Automated connection reports for Legacy Systems using Claude AI technology.</p>
                     </div>
-                    
+
                     <div class="project-tile" data-project="llm-scraper">
+                        <img src="images/18.jpg" alt="Containerized LLM Scraper">
                         <h3>Containerized LLM Scraper</h3>
                         <p>High-performance data extraction solution achieving 90% faster processing times.</p>
                     </div>
-                    
+
                     <div class="project-tile" data-project="trade-mapping">
+                        <img src="images/19.jpg" alt="Trade-Term Mapping Solution">
                         <h3>Trade-Term Mapping Solution</h3>
                         <p>GPT API-powered automation reducing task completion time by 90%.</p>
-                    </div>
-                    
-                    <div class="project-tile" data-project="browser-automation">
-                        <h3>Multimodal AI Browser Automation</h3>
-                        <p>Intelligent browser automation for insurer portal interaction and data processing.</p>
-                    </div>
-                    
-                    <div class="project-tile" data-project="langchain-parsing">
-                        <h3>LangChain Data Quality Extraction</h3>
-                        <p>Advanced parsing solution for unstructured data quality assessment and extraction.</p>
-                    </div>
-                    
-                    <div class="project-tile" data-project="axiom-connector">
-                        <h3>Axiom Connector</h3>
-                        <p>Engineered solution reducing reporting cycles by 50% through optimized data connections.</p>
-                    </div>
-                    
-                    <div class="project-tile" data-project="ml-turbine">
-                        <h3>Turbine Failure Detection</h3>
-                        <p>Machine Learning solution for predictive maintenance, detecting failures 24 hours early.</p>
-                    </div>
-                    
-                    <div class="project-tile" data-project="regulatory-reporting">
-                        <h3>Regulatory Reporting Acceleration</h3>
-                        <p>Built 1000+ lineage models for large banks to streamline regulatory compliance.</p>
-                    </div>
-                    
-                    <div class="project-tile" data-project="powerbi-nlp">
-                        <h3>Power BI NLP Dashboards</h3>
-                        <p>Advanced analytics dashboards reducing survey analysis effort by 50%.</p>
                     </div>
                 </div>
             </section>
@@ -530,12 +650,142 @@
 
     <script>
         // Project details data
+
         const projectDetails = {
+            'pro-scraper': {
+                title: 'Pro Scraper – Data Extraction from Insurer Sites',
+                content: `
+                    <ul>
+                        <li>JavaScript snippets were used for scraping insurer portals one site at a time, taking about two weeks per insurer and breaking with every UI change.</li>
+                        <li>Architected &amp; built "Pro Scraper," a drop-in console tool that feeds raw HTML to a local LLM and instantly outputs structured JSON for questions, logic and validations.</li>
+                        <li>Standardised the practice with docs and mentoring, embedding the tool in workflows to cut extraction time to ≤ 2 days while keeping data on local infrastructure.</li>
+                    </ul>
+                `
+            },
+            'semantic-mapper': {
+                title: 'Semantic Mapper for Trade Descriptions Mapping',
+                content: `
+                    <ul>
+                        <li>Mapping insurer trade descriptions to the firm’s master list required manual look-ups and multi-step reviews, making the process slow and mismatch-prone.</li>
+                        <li>Built the "Semantic Mapper" blending similarity metrics with a local LLM to auto-align terms, surface confidence scores and provide a zero-code console drop-zone.</li>
+                        <li>Standardised and scaled the practice with full docs and mentoring, shrinking a four-week task to two days and boosting accuracy.</li>
+                    </ul>
+                `
+            },
+            'adaptive-browser-agent': {
+                title: 'Adaptive Browser Automation POC',
+                content: `
+                    <ul>
+                        <li>In the extranet-aggregator quote flow every insurer site needed custom RPA scripts, leading to long build cycles and fragile maintenance.</li>
+                        <li>Engineered an "Adaptive Browser Agent" marrying modern automation APIs with a multi-modal LLM that sees the page and turns plain-English commands into actions.</li>
+                        <li>Showcased an end-to-end quote demo, prompting a rethink of future automation tooling in favour of this flexible, ML-driven approach.</li>
+                    </ul>
+                `
+            },
+            'mentorship-leadership': {
+                title: 'Mentorship and Scalable Solution Leadership',
+                content: `
+                    <ul>
+                        <li>Actively mentored junior and mid-level team members across automation and data projects, pairing on complex tasks and providing regular check-ins.</li>
+                        <li>Owned onboarding for new joiners, walking them through tools, designs and client context so they could contribute confidently.</li>
+                        <li>Led internal knowledge-sharing sessions and maintained reusable workflows, enabling consistent delivery while reducing dependency on senior staff.</li>
+                    </ul>
+                `
+            },
+            'rule-to-js': {
+                title: 'Business Rule-to-JavaScript Converter',
+                content: `
+                    <ul>
+                        <li>Managing insurer portal behaviour required large volumes of JavaScript for calculations, conditional flows and validations.</li>
+                        <li>Designed an automated converter using Python and a local LLM to turn structured rules into validated JavaScript, JSON parameters and automated tests.</li>
+                        <li>Reduced implementation time from two weeks to two days while keeping all processing secure on local infrastructure.</li>
+                    </ul>
+                `
+            },
+            'insurer-automation': {
+                title: 'Insurer Site Automation and Logic Engineering',
+                content: `
+                    <ul>
+                        <li>Contributed to an automation initiative that mapped dynamic insurer question sets in Airtable to internal product parameters executed via Selenium.</li>
+                        <li>Supported JavaScript logic for validations, conditional behaviour and calculated fields.</li>
+                        <li>Helped build Selenium-based tests to streamline QA and ensure consistency across insurer platforms.</li>
+                    </ul>
+                `
+            },
+            'fraxses-layer': {
+                title: 'Unified Data Access Layer (Beneficient)',
+                content: `
+                    <ul>
+                        <li>Partnered with Beneficient Group to implement a scalable data workbench in Fraxses for virtual access to distributed datasets.</li>
+                        <li>Designed and deployed federated models that unified disparate data sources into consumable tables and views.</li>
+                        <li>Reduced data access time and empowered business users with governed datasets for faster reporting.</li>
+                    </ul>
+                `
+            },
+            'solidatus-ingestion': {
+                title: 'Automated Data Integration Solutions (Solidatus)',
+                content: `
+                    <ul>
+                        <li>Identified a critical gap: no structured way to ingest flat files into Solidatus, leading to error-prone manual processes.</li>
+                        <li>Developed configurable connectors with a friendly interface to handle file ingestion and transformation automatically.</li>
+                        <li>Became the standard approach for lineage population, reclaiming over 200 hours per month across engagements.</li>
+                    </ul>
+                `
+            },
+            'predictive-maintenance': {
+                title: 'Accelerated Root Cause Analysis (Mitsubishi)',
+                content: `
+                    <ul>
+                        <li>Engaged in a predictive maintenance initiative using WPS Analytics to detect turbine failures up to 24 hours in advance.</li>
+                        <li>Streamlined root cause identification and improved operational responsiveness.</li>
+                        <li>Gained hands-on experience with WPS ML Workbench and practical insights into industrial ML applications.</li>
+                    </ul>
+                `
+            },
+            'regulatory-compliance': {
+                title: 'Strengthened Regulatory Compliance (BNYM)',
+                content: `
+                    <ul>
+                        <li>The client faced challenges meeting regulatory reporting goals due to inconsistent data flows and missing lineage.</li>
+                        <li>Designed and delivered 200+ atomic and 50+ consolidated lineage models using Solidatus and Python.</li>
+                        <li>Brought transparency to data movement and enabled reliable FR2052A reporting while reducing compliance overhead.</li>
+                    </ul>
+                `
+            },
+            'markets-architecture': {
+                title: 'Transformed Global Markets Architecture (BOFA)',
+                content: `
+                    <ul>
+                        <li>Designed dynamic Visio and Lucidchart diagrams of 400+ interconnected systems across global markets.</li>
+                        <li>Implemented automated, scheduled updates to keep the architecture visuals current.</li>
+                        <li>Provided a trusted decision-making tool for leadership and improved alignment across stakeholders.</li>
+                    </ul>
+                `
+            },
+            'axiom-connector': {
+                title: 'Engineered the Custom Connector (Axiom)',
+                content: `
+                    <ul>
+                        <li>Designed and led development of a data-transformation pipeline integrating Axiom with ASG, Collibra, Solidatus and EDC.</li>
+                        <li>Automated transformation logic for consistent data movement across regulatory tools.</li>
+                        <li>Cut reporting cycles by 50% while improving the quality and trustworthiness of regulatory data.</li>
+                    </ul>
+                `
+            },
+            'regulatory-design': {
+                title: 'Enhanced Regulatory Design (LSEG)',
+                content: `
+                    <ul>
+                        <li>Designed and built interactive Power BI dashboards and applied Python-based NLP to analyze enterprise survey responses.</li>
+                        <li>Used techniques like word-cloud sentiment analysis to uncover process issues and cut manual review effort by half.</li>
+                        <li>Enabled leadership to prioritise improvements based on real feedback trends.</li>
+                    </ul>
+                `
+            },
             'gcp-workflows': {
                 title: 'Automated Data Workflows with GCP, Vertex AI and Python',
                 content: `
-                    <p>Developed comprehensive automated data workflows leveraging Google Cloud Platform's robust infrastructure and Vertex AI's machine learning capabilities.</p>
-                    
+                    <p>Developed comprehensive automated data workflows leveraging Google Cloud Platform's infrastructure and Vertex AI.</p>
                     <h4>Key Achievements:</h4>
                     <ul>
                         <li>Mentored teams in hands-on solution design, accelerating prototyping phases</li>
@@ -543,7 +793,6 @@
                         <li>Integrated Vertex AI for intelligent data processing and analysis</li>
                         <li>Reduced manual intervention by 80% through intelligent automation</li>
                     </ul>
-                    
                     <h4>Technologies Used:</h4>
                     <p>Google Cloud Platform, Vertex AI, Python, Cloud Functions, BigQuery, Cloud Storage</p>
                 `
@@ -551,8 +800,7 @@
             'streamlit-platform': {
                 title: 'Drag-and-Drop Data Configuration Platform',
                 content: `
-                    <p>Built an intuitive drag-and-drop data configuration platform using Streamlit for Solidatus, enabling non-technical users to configure complex data workflows.</p>
-                    
+                    <p>Built an intuitive drag-and-drop data configuration platform using Streamlit for Solidatus.</p>
                     <h4>Key Features:</h4>
                     <ul>
                         <li>Intuitive drag-and-drop interface for data mapping</li>
@@ -560,7 +808,6 @@
                         <li>Automated code generation from visual configurations</li>
                         <li>Integration with existing Solidatus infrastructure</li>
                     </ul>
-                    
                     <h4>Impact:</h4>
                     <p>Reduced configuration time by 70% and enabled business users to create data workflows independently.</p>
                 `
@@ -569,7 +816,6 @@
                 title: 'LLM-Driven Pipeline for Business Rules Conversion',
                 content: `
                     <p>Designed and implemented an advanced pipeline that converts complex business rules into executable code snippets using Large Language Models.</p>
-                    
                     <h4>Technical Implementation:</h4>
                     <ul>
                         <li>Natural language processing of business requirements</li>
@@ -577,7 +823,6 @@
                         <li>Code generation with multiple language support</li>
                         <li>Automated testing and validation framework</li>
                     </ul>
-                    
                     <h4>Results:</h4>
                     <p>Achieved 85% accuracy in code generation and reduced development time for business logic implementation by 60%.</p>
                 `
@@ -586,7 +831,6 @@
                 title: 'Claude-Based Connection Reports for Legacy Systems',
                 content: `
                     <p>Developed an intelligent reporting system using Claude AI to generate comprehensive connection reports for legacy system integration.</p>
-                    
                     <h4>System Capabilities:</h4>
                     <ul>
                         <li>Automated analysis of legacy system architectures</li>
@@ -594,7 +838,6 @@
                         <li>Risk assessment and compliance reporting</li>
                         <li>Integration recommendation engine</li>
                     </ul>
-                    
                     <h4>Business Value:</h4>
                     <p>Reduced manual documentation effort by 90% and improved system integration planning accuracy.</p>
                 `
@@ -603,7 +846,6 @@
                 title: 'Containerized LLM Scraper for Insurer Data',
                 content: `
                     <p>Built a high-performance, containerized data extraction solution specifically designed for insurance industry data processing.</p>
-                    
                     <h4>Architecture:</h4>
                     <ul>
                         <li>Docker containerization for scalable deployment</li>
@@ -611,7 +853,6 @@
                         <li>Real-time processing capabilities</li>
                         <li>Fault-tolerant error handling and recovery</li>
                     </ul>
-                    
                     <h4>Performance:</h4>
                     <p>Achieved 90% faster data extraction compared to traditional methods, processing thousands of insurance documents daily.</p>
                 `
@@ -619,8 +860,7 @@
             'trade-mapping': {
                 title: 'Automated Trade-Term Mapping Solution',
                 content: `
-                    <p>Implemented an intelligent mapping solution using GPT APIs to automate the complex process of trade term standardization and mapping.</p>
-                    
+                    <p>Implemented an intelligent mapping solution using GPT APIs to automate trade term standardization and mapping.</p>
                     <h4>Solution Components:</h4>
                     <ul>
                         <li>GPT API integration for semantic understanding</li>
@@ -628,115 +868,11 @@
                         <li>Confidence scoring and manual review workflows</li>
                         <li>Continuous learning and model improvement</li>
                     </ul>
-                    
                     <h4>Efficiency Gains:</h4>
                     <p>Reduced task completion time by 90%, enabling faster trade processing and improved accuracy in financial operations.</p>
                 `
-            },
-            'browser-automation': {
-                title: 'Multimodal AI Browser Automation',
-                content: `
-                    <p>Developed sophisticated browser automation system for insurer portal interaction using multimodal AI capabilities.</p>
-                    
-                    <h4>Advanced Features:</h4>
-                    <ul>
-                        <li>Computer vision for UI element recognition</li>
-                        <li>Natural language understanding for form filling</li>
-                        <li>Adaptive navigation based on portal changes</li>
-                        <li>Error detection and recovery mechanisms</li>
-                    </ul>
-                    
-                    <h4>Use Cases:</h4>
-                    <p>Automated policy data extraction, claim processing, and regulatory reporting across multiple insurer portals.</p>
-                `
-            },
-            'langchain-parsing': {
-                title: 'LangChain Parsing for Unstructured Data Quality',
-                content: `
-                    <p>Implemented advanced parsing solution using LangChain framework for comprehensive data quality assessment and extraction from unstructured sources.</p>
-                    
-                    <h4>Technical Stack:</h4>
-                    <ul>
-                        <li>LangChain framework for document processing</li>
-                        <li>Multi-format document support (PDF, Word, Excel)</li>
-                        <li>Quality scoring algorithms</li>
-                        <li>Automated data validation and cleansing</li>
-                    </ul>
-                    
-                    <h4>Outcomes:</h4>
-                    <p>Improved data quality assessment accuracy by 75% and reduced manual data review time significantly.</p>
-                `
-            },
-            'axiom-connector': {
-                title: 'Axiom Connector Engineering',
-                content: `
-                    <p>Engineered high-performance Axiom connector that dramatically improved reporting cycle efficiency for enterprise clients.</p>
-                    
-                    <h4>Engineering Excellence:</h4>
-                    <ul>
-                        <li>Optimized data connection protocols</li>
-                        <li>Parallel processing implementation</li>
-                        <li>Advanced caching mechanisms</li>
-                        <li>Real-time monitoring and alerting</li>
-                    </ul>
-                    
-                    <h4>Business Impact:</h4>
-                    <p>Achieved 50% reduction in reporting cycles, enabling faster business decision-making and improved operational efficiency.</p>
-                `
-            },
-            'ml-turbine': {
-                title: 'Machine Learning Turbine Failure Detection',
-                content: `
-                    <p>Developed predictive maintenance solution using machine learning to detect turbine failures 24 hours before occurrence.</p>
-                    
-                    <h4>ML Implementation:</h4>
-                    <ul>
-                        <li>Time-series analysis of sensor data</li>
-                        <li>Anomaly detection algorithms</li>
-                        <li>Predictive modeling with ensemble methods</li>
-                        <li>Real-time alerting system</li>
-                    </ul>
-                    
-                    <h4>Results:</h4>
-                    <p>Achieved 95% accuracy in failure prediction, preventing costly downtime and reducing maintenance costs by 40%.</p>
-                `
-            },
-            'regulatory-reporting': {
-                title: 'Regulatory Reporting Acceleration for Banks',
-                content: `
-                    <p>Accelerated regulatory reporting processes for large banking institutions by building comprehensive data lineage models.</p>
-                    
-                    <h4>Scale of Implementation:</h4>
-                    <ul>
-                        <li>Built 1000+ detailed lineage models</li>
-                        <li>Covered multiple regulatory frameworks</li>
-                        <li>Automated compliance checking</li>
-                        <li>Risk assessment and monitoring</li>
-                    </ul>
-                    
-                    <h4>Compliance Impact:</h4>
-                    <p>Improved regulatory reporting accuracy and reduced compliance risk exposure for major financial institutions.</p>
-                `
-            },
-            'powerbi-nlp': {
-                title: 'Power BI NLP Dashboards',
-                content: `
-                    <p>Developed advanced analytics dashboards combining Power BI visualization capabilities with natural language processing for survey analysis.</p>
-                    
-                    <h4>Dashboard Features:</h4>
-                    <ul>
-                        <li>Real-time sentiment analysis</li>
-                        <li>Automated theme extraction</li>
-                        <li>Interactive visualizations</li>
-                        <li>Trend analysis and forecasting</li>
-                    </ul>
-                    
-                    <h4>Efficiency Improvement:</h4>
-                    <p>Reduced survey analysis effort by 50% while providing deeper insights through automated text analysis and visualization.</p>
-                `
             }
         };
-
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
