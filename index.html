@@ -393,6 +393,7 @@
             .hero-right {
                 align-items: center;
             }
+
         }
 
         @media (max-width: 600px) {
@@ -473,11 +474,13 @@
 
                     <div class="project-tile" data-project="adaptive-browser-agent">
                         <img src="images/3.jpg" alt="Adaptive Browser Automation POC">
+
                         <h3>Adaptive Browser Automation POC</h3>
                         <p>Multimodal agent translating plain-English commands into actions for flexible portal automation.</p>
                     </div>
 
                     <div class="project-tile" data-project="mentorship-leadership">
+
                         <img src="images/4.jpg" alt="Mentorship and Scalable Solution Leadership">
                         <h3>Mentorship and Scalable Solution Leadership</h3>
                         <p>Guided teams through reusable workflows and documentation, enabling rapid onboarding and delivery.</p>
@@ -572,6 +575,7 @@
                         <h3>Trade-Term Mapping Solution</h3>
                         <p>GPT API-powered automation reducing task completion time by 90%.</p>
                     </div>
+
                 </div>
             </section>
 
@@ -787,90 +791,102 @@
                 content: `
                     <p>Developed comprehensive automated data workflows leveraging Google Cloud Platform's infrastructure and Vertex AI.</p>
                     <h4>Key Achievements:</h4>
+
                     <ul>
-                        <li>Mentored teams in hands-on solution design, accelerating prototyping phases</li>
-                        <li>Implemented scalable data processing pipelines using GCP services</li>
-                        <li>Integrated Vertex AI for intelligent data processing and analysis</li>
-                        <li>Reduced manual intervention by 80% through intelligent automation</li>
+                        <li>Mapping insurer trade descriptions to the firm’s master list required manual look-ups and multi-step reviews, making the process slow and mismatch-prone.</li>
+                        <li>Built the "Semantic Mapper" blending similarity metrics with a local LLM to auto-align terms, surface confidence scores and provide a zero-code console drop-zone.</li>
+                        <li>Standardised and scaled the practice with full docs and mentoring, shrinking a four-week task to two days and boosting accuracy.</li>
+
                     </ul>
                     <h4>Technologies Used:</h4>
                     <p>Google Cloud Platform, Vertex AI, Python, Cloud Functions, BigQuery, Cloud Storage</p>
+
                 `
             },
-            'streamlit-platform': {
-                title: 'Drag-and-Drop Data Configuration Platform',
+            'adaptive-browser-agent': {
+                title: 'Adaptive Browser Automation POC',
                 content: `
                     <p>Built an intuitive drag-and-drop data configuration platform using Streamlit for Solidatus.</p>
                     <h4>Key Features:</h4>
+
                     <ul>
-                        <li>Intuitive drag-and-drop interface for data mapping</li>
-                        <li>Real-time configuration validation</li>
-                        <li>Automated code generation from visual configurations</li>
-                        <li>Integration with existing Solidatus infrastructure</li>
+
+                        <li>In the extranet-aggregator quote flow every insurer site needed custom RPA scripts, leading to long build cycles and fragile maintenance.</li>
+                        <li>Engineered an "Adaptive Browser Agent" marrying modern automation APIs with a multi-modal LLM that sees the page and turns plain-English commands into actions.</li>
+                        <li>Showcased an end-to-end quote demo, prompting a rethink of future automation tooling in favour of this flexible, ML-driven approach.</li>
+
                     </ul>
                     <h4>Impact:</h4>
                     <p>Reduced configuration time by 70% and enabled business users to create data workflows independently.</p>
+
                 `
             },
-            'llm-pipeline': {
-                title: 'LLM-Driven Pipeline for Business Rules Conversion',
+            'mentorship-leadership': {
+                title: 'Mentorship and Scalable Solution Leadership',
                 content: `
                     <p>Designed and implemented an advanced pipeline that converts complex business rules into executable code snippets using Large Language Models.</p>
                     <h4>Technical Implementation:</h4>
+
                     <ul>
-                        <li>Natural language processing of business requirements</li>
-                        <li>Rule parsing and semantic analysis</li>
-                        <li>Code generation with multiple language support</li>
-                        <li>Automated testing and validation framework</li>
+                        <li>Actively mentored junior and mid-level team members across automation and data projects, pairing on complex tasks and providing regular check-ins.</li>
+                        <li>Owned onboarding for new joiners, walking them through tools, designs and client context so they could contribute confidently.</li>
+                        <li>Led internal knowledge-sharing sessions and maintained reusable workflows, enabling consistent delivery while reducing dependency on senior staff.</li>
                     </ul>
                     <h4>Results:</h4>
                     <p>Achieved 85% accuracy in code generation and reduced development time for business logic implementation by 60%.</p>
+
                 `
             },
-            'claude-reports': {
-                title: 'Claude-Based Connection Reports for Legacy Systems',
+            'rule-to-js': {
+                title: 'Business Rule-to-JavaScript Converter',
                 content: `
                     <p>Developed an intelligent reporting system using Claude AI to generate comprehensive connection reports for legacy system integration.</p>
                     <h4>System Capabilities:</h4>
+
                     <ul>
-                        <li>Automated analysis of legacy system architectures</li>
-                        <li>Intelligent connection mapping and documentation</li>
-                        <li>Risk assessment and compliance reporting</li>
-                        <li>Integration recommendation engine</li>
+                        <li>Managing insurer portal behaviour required large volumes of JavaScript for calculations, conditional flows and validations.</li>
+                        <li>Designed an automated converter using Python and a local LLM to turn structured rules into validated JavaScript, JSON parameters and automated tests.</li>
+                        <li>Reduced implementation time from two weeks to two days while keeping all processing secure on local infrastructure.</li>
+
                     </ul>
                     <h4>Business Value:</h4>
                     <p>Reduced manual documentation effort by 90% and improved system integration planning accuracy.</p>
+
                 `
             },
-            'llm-scraper': {
-                title: 'Containerized LLM Scraper for Insurer Data',
+            'insurer-automation': {
+                title: 'Insurer Site Automation and Logic Engineering',
                 content: `
                     <p>Built a high-performance, containerized data extraction solution specifically designed for insurance industry data processing.</p>
                     <h4>Architecture:</h4>
+
                     <ul>
-                        <li>Docker containerization for scalable deployment</li>
-                        <li>LLM-powered intelligent data extraction</li>
-                        <li>Real-time processing capabilities</li>
-                        <li>Fault-tolerant error handling and recovery</li>
+                        <li>Contributed to an automation initiative that mapped dynamic insurer question sets in Airtable to internal product parameters executed via Selenium.</li>
+                        <li>Supported JavaScript logic for validations, conditional behaviour and calculated fields.</li>
+                        <li>Helped build Selenium-based tests to streamline QA and ensure consistency across insurer platforms.</li>
+
                     </ul>
                     <h4>Performance:</h4>
                     <p>Achieved 90% faster data extraction compared to traditional methods, processing thousands of insurance documents daily.</p>
+
                 `
             },
-            'trade-mapping': {
-                title: 'Automated Trade-Term Mapping Solution',
+            'fraxses-layer': {
+                title: 'Unified Data Access Layer (Beneficient)',
                 content: `
                     <p>Implemented an intelligent mapping solution using GPT APIs to automate trade term standardization and mapping.</p>
                     <h4>Solution Components:</h4>
+
                     <ul>
-                        <li>GPT API integration for semantic understanding</li>
-                        <li>Trade terminology database and matching algorithms</li>
-                        <li>Confidence scoring and manual review workflows</li>
-                        <li>Continuous learning and model improvement</li>
+                        <li>Partnered with Beneficient Group to implement a scalable data workbench in Fraxses for virtual access to distributed datasets.</li>
+                        <li>Designed and deployed federated models that unified disparate data sources into consumable tables and views.</li>
+                        <li>Reduced data access time and empowered business users with governed datasets for faster reporting.</li>
+
                     </ul>
                     <h4>Efficiency Gains:</h4>
                     <p>Reduced task completion time by 90%, enabling faster trade processing and improved accuracy in financial operations.</p>
                 `
+
             }
         };
         // Smooth scrolling for navigation
