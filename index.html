@@ -114,6 +114,18 @@
             justify-content: center;
         }
 
+        .hero-photo-container {
+            text-align: center;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
         .hero-name {
             font-size: 4rem;
             font-weight: 300;
@@ -358,6 +370,25 @@
             margin-top: 2rem;
         }
 
+        .interesting-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .interesting-links img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .interesting-links img:hover {
+            transform: scale(1.05);
+        }
+
         .contact-links a {
             text-decoration: none;
             color: #2c2c2c;
@@ -405,6 +436,10 @@
                 font-size: 2rem;
                 margin-bottom: 1rem;
             }
+            .hero-photo {
+                width: 150px;
+                height: 150px;
+            }
             .hero-right h2 {
                 font-size: 1.6rem;
             }
@@ -414,6 +449,11 @@
             }
 
             .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .interesting-links {
                 flex-direction: column;
                 align-items: center;
             }
@@ -444,7 +484,10 @@
             <section class="hero" id="about">
                 <div class="hero-container">
                     <div class="hero-left">
-                        <h1 class="hero-name">Preetham Shylendhra</h1>
+                        <div class="hero-photo-container">
+                            <img src="Photo/profilephoto.jpg" alt="Preetham Shylendhra" class="hero-photo">
+                            <h1 class="hero-name">Preetham<br>Shylendhra</h1>
+                        </div>
                     </div>
                     <div class="hero-right">
                         <h2>Data &amp; AI Consultant</h2>
@@ -588,6 +631,17 @@
                 </div>
             </section>
 
+            <section id="links" class="section">
+                <h2 class="section-title">Interesting Space</h2>
+                <div class="contact-content">
+                    <div class="interesting-links">
+                        <a href="https://www.notsomeai.com" target="_blank"><img src="Space_Images/NotSomeAI.jpg" alt="Not Some AI"></a>
+                        <a href="https://www.ijert.org/capturing-the-feeling-of-a-person-using-neural-lace-and-recreating-it-artificially" target="_blank"><img src="Space_Images/Neural_Lace.jpg" alt="Neural Lace"></a>
+                        <a href="https://www.hackerrank.com/profile/preetham7cs" target="_blank"><img src="Space_Images/Hacker_Rank.jpg" alt="HackerRank"></a>
+                    </div>
+                </div>
+            </section>
+
             <section id="contact" class="section">
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-content">
@@ -596,17 +650,6 @@
                         <a href="mailto:preetham7cs@gmail.com" target="_blank">Email</a>
                         <a href="https://www.linkedin.com/in/preetham-cs/" target="_blank">LinkedIn</a>
                         <a href="https://github.com/preetham7cs" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="links" class="section">
-                <h2 class="section-title">Interesting Space</h2>
-                <div class="contact-content">
-                    <div class="contact-links">
-                        <a href="https://www.notsomeai.com" target="">Not Some AI</a>
-                        <a href="https://www.ijert.org/capturing-the-feeling-of-a-person-using-neural-lace-and-recreating-it-artificially" target="">Neural Lace</a>
-                        <a href="https://www.hackerrank.com/profile/preetham7cs" target="">HackerRank</a>
                     </div>
                 </div>
             </section>
