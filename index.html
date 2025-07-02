@@ -195,7 +195,7 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 0;
             margin-bottom: 2rem;
             border: 1px solid #fff;
@@ -203,6 +203,7 @@
 
         .group-container {
             display: flex;
+            flex-direction: column;
             gap: 2rem;
             align-items: stretch;
         }
@@ -214,35 +215,24 @@
         }
 
         .group-projects {
-            flex: 3;
+            flex: none;
         }
 
         .group-skills {
-            flex: 1;
-            position: relative;
+            flex: none;
         }
 
-        .group-skills .projects-grid {
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            height: 100%;
-            gap: 0;
+        .skills-block {
             border: 1px solid #fff;
-            flex: 1;
-            margin-top: 2rem;
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .skill-tile {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            aspect-ratio: 1 / 1;
-            padding: 1rem;
+        .skill-label {
             font-size: 0.9rem;
             color: #fff;
-            box-shadow: inset 0 0 0 1px #fff;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            transition: background 0.3s ease;
         }
 
         .project-tile {
@@ -261,22 +251,17 @@
             font-size: 1rem;
         }
 
-        .project-tile:hover,
-        .skill-tile:hover {
+        .project-tile:hover {
             background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
         }
 
 
         .skills-title {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
             text-align: center;
             font-size: 1.2rem;
             font-weight: 300;
             color: #fff;
-            margin: 0;
+            margin: 0 0 1rem 0;
         }
 
 
@@ -563,26 +548,26 @@
         </div>
         <div class="group-skills">
             <h3 class="skills-title">Skills</h3>
-            <div class="projects-grid">
-                <div class="skill-tile">Vertex AI</div>
-                <div class="skill-tile">Gen AI</div>
-                <div class="skill-tile">LangChain</div>
-                <div class="skill-tile">LangGraph</div>
-                <div class="skill-tile">CrewAI</div>
-                <div class="skill-tile">n8n</div>
-                <div class="skill-tile">Zapier</div>
-                <div class="skill-tile">LLM</div>
-                <div class="skill-tile">AI Agents</div>
-                <div class="skill-tile">Python</div>
-                <div class="skill-tile">SQL</div>
-                <div class="skill-tile">BigQuery</div>
-                <div class="skill-tile">Streamlit</div>
-                <div class="skill-tile">Browser Automation</div>
-                <div class="skill-tile">End-to-End Process Automation</div>
-                <div class="skill-tile">Rapid Prototyping &amp; Iterative Delivery</div>
-                <div class="skill-tile">Data Structures</div>
-                <div class="skill-tile">Problem Solving</div>
-                <div class="skill-tile">Research and Experimentation</div>
+            <div class="skills-block">
+                <span class="skill-label">Vertex AI</span>
+                <span class="skill-label">Gen AI</span>
+                <span class="skill-label">LangChain</span>
+                <span class="skill-label">LangGraph</span>
+                <span class="skill-label">CrewAI</span>
+                <span class="skill-label">n8n</span>
+                <span class="skill-label">Zapier</span>
+                <span class="skill-label">LLM</span>
+                <span class="skill-label">AI Agents</span>
+                <span class="skill-label">Python</span>
+                <span class="skill-label">SQL</span>
+                <span class="skill-label">BigQuery</span>
+                <span class="skill-label">Streamlit</span>
+                <span class="skill-label">Browser Automation</span>
+                <span class="skill-label">End-to-End Process Automation</span>
+                <span class="skill-label">Rapid Prototyping &amp; Iterative Delivery</span>
+                <span class="skill-label">Data Structures</span>
+                <span class="skill-label">Problem Solving</span>
+                <span class="skill-label">Research and Experimentation</span>
             </div>
         </div>
     </div>
@@ -624,25 +609,25 @@
         </div>
         <div class="group-skills">
             <h3 class="skills-title">Skills</h3>
-            <div class="projects-grid">
-                <div class="skill-tile">Fraxses</div>
-                <div class="skill-tile">Solidatus</div>
-                <div class="skill-tile">Google Cloud Platform (GCP)</div>
-                <div class="skill-tile">WPS Analytics</div>
-                <div class="skill-tile">Docker</div>
-                <div class="skill-tile">PostgreSQL</div>
-                <div class="skill-tile">Microsoft Power BI</div>
-                <div class="skill-tile">Lucidchart</div>
-                <div class="skill-tile">Visio</div>
-                <div class="skill-tile">SmartDraw</div>
-                <div class="skill-tile">Microsoft Excel</div>
-                <div class="skill-tile">Microsoft Access DB</div>
-                <div class="skill-tile">Data Lineage</div>
-                <div class="skill-tile">Data Visualization</div>
-                <div class="skill-tile">Data Analytics</div>
-                <div class="skill-tile">Cross-System Data Integration</div>
-                <div class="skill-tile">End-to-End Solution Design</div>
-                <div class="skill-tile">Scalable System Development</div>
+            <div class="skills-block">
+                <span class="skill-label">Fraxses</span>
+                <span class="skill-label">Solidatus</span>
+                <span class="skill-label">Google Cloud Platform (GCP)</span>
+                <span class="skill-label">WPS Analytics</span>
+                <span class="skill-label">Docker</span>
+                <span class="skill-label">PostgreSQL</span>
+                <span class="skill-label">Microsoft Power BI</span>
+                <span class="skill-label">Lucidchart</span>
+                <span class="skill-label">Visio</span>
+                <span class="skill-label">SmartDraw</span>
+                <span class="skill-label">Microsoft Excel</span>
+                <span class="skill-label">Microsoft Access DB</span>
+                <span class="skill-label">Data Lineage</span>
+                <span class="skill-label">Data Visualization</span>
+                <span class="skill-label">Data Analytics</span>
+                <span class="skill-label">Cross-System Data Integration</span>
+                <span class="skill-label">End-to-End Solution Design</span>
+                <span class="skill-label">Scalable System Development</span>
             </div>
         </div>
     </div>
@@ -672,14 +657,14 @@
         </div>
         <div class="group-skills">
             <h3 class="skills-title">Skills</h3>
-            <div class="projects-grid">
-                <div class="skill-tile">Mentoring &amp; Leadership</div>
-                <div class="skill-tile">Cross-Functional Team Leadership</div>
-                <div class="skill-tile">Vendor Evaluation &amp; Cost Estimation</div>
-                <div class="skill-tile">Stakeholder Communication &amp; Alignment</div>
-                <div class="skill-tile">Agile Delivery (Scrum, Kanban)</div>
-                <div class="skill-tile">Team Collaboration</div>
-                <div class="skill-tile">End-to-End Solution Design</div>
+            <div class="skills-block">
+                <span class="skill-label">Mentoring &amp; Leadership</span>
+                <span class="skill-label">Cross-Functional Team Leadership</span>
+                <span class="skill-label">Vendor Evaluation &amp; Cost Estimation</span>
+                <span class="skill-label">Stakeholder Communication &amp; Alignment</span>
+                <span class="skill-label">Agile Delivery (Scrum, Kanban)</span>
+                <span class="skill-label">Team Collaboration</span>
+                <span class="skill-label">End-to-End Solution Design</span>
             </div>
         </div>
     </div>
