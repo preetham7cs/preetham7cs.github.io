@@ -13,8 +13,8 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f5f5f3;
-            color: #2c2c2c;
+            background-color: #000;
+            color: #fff;
             line-height: 1.6;
         }
 
@@ -23,11 +23,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(245, 245, 243, 0.95);
-            backdrop-filter: blur(10px);
+            background: #000;
             padding: 1rem 2rem;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid #fff;
         }
 
         .nav-container {
@@ -43,7 +42,7 @@
         .logo {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #2c2c2c;
+            color: #fff;
             text-decoration: none;
             letter-spacing: 0.5px;
         }
@@ -56,7 +55,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #2c2c2c;
+            color: #fff;
             font-weight: 400;
             font-size: 0.9rem;
             transition: all 0.3s ease;
@@ -64,7 +63,7 @@
         }
 
         .nav-links a:hover {
-            color: #666;
+            color: #ccc;
         }
 
         .nav-links a::after {
@@ -74,7 +73,7 @@
             left: 0;
             width: 0;
             height: 1px;
-            background-color: #2c2c2c;
+            background-color: #fff;
             transition: width 0.3s ease;
         }
 
@@ -129,7 +128,7 @@
         .hero-name {
             font-size: 3rem;
             font-weight: 300;
-            color: #2c2c2c;
+            color: #fff;
         }
 
         .hero-right {
@@ -143,12 +142,12 @@
             font-size: 2.2rem;
             font-weight: 300;
             margin-bottom: 1rem;
-            color: #2c2c2c;
+            color: #fff;
         }
 
         .hero .subtitle {
             font-size: 1.2rem;
-            color: #666;
+            color: #ccc;
             margin-bottom: 2rem;
             max-width: 600px;
         }
@@ -171,7 +170,7 @@
             font-weight: 300;
             margin-bottom: 3rem;
             text-align: center;
-            color: #2c2c2c;
+            color: #fff;
         }
 
         .about-title {
@@ -186,15 +185,17 @@
             text-align: left;
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #555;
+            color: #ccc;
         }
 
         /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 0;
             margin-bottom: 2rem;
+            border-left: 1px solid #fff;
+            border-top: 1px solid #fff;
         }
 
         .group-container {
@@ -213,72 +214,48 @@
 
         .group-skills .projects-grid {
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0;
+            border-left: 1px solid #fff;
+            border-top: 1px solid #fff;
         }
 
         .skill-tile {
-            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            text-align: center;
             font-size: 0.9rem;
+            color: #fff;
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            text-align: center;
         }
 
         .project-tile {
             display: flex;
-            flex-direction: column;
-            min-height: 420px;
-            aspect-ratio: 3 / 4;
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            padding: 1rem;
+            color: #fff;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            text-align: center;
         }
 
         .project-tile img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-            margin-bottom: 1rem;
-        }
-
-        .project-tile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            display: none;
         }
 
         .project-tile h3 {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: #2c2c2c;
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0;
+            color: #fff;
         }
 
-        .project-tile p {
-            color: #666;
-            line-height: 1.6;
-        }
 
-        .project-tile::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #2c2c2c, #666);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .project-tile:hover::after {
-            transform: scaleX(1);
-        }
 
         /* Project Modal */
         .project-modal {
@@ -296,9 +273,10 @@
         }
 
         .modal-content {
-            background: #2c2c2c;
-            color: #f5f5f3;
-            border-radius: 16px;
+            background: #000;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 0;
             padding: 3rem;
             max-width: 800px;
             width: 100%;
@@ -327,18 +305,13 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #f5f5f3;
-            transition: color 0.3s ease;
-        }
-
-        .close-btn:hover {
             color: #fff;
         }
 
         .modal-content h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: #f5f5f3;
+            color: #fff;
         }
 
         .modal-content .project-details {
@@ -357,27 +330,21 @@
         }
 
         .skill-category {
-            background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #fff;
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-3px);
+            color: #fff;
         }
 
         .skill-category h3 {
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            color: #2c2c2c;
+            color: #fff;
         }
 
         .skill-category ul {
             list-style: none;
-            color: #666;
+            color: #ccc;
         }
 
         .skill-category li {
@@ -410,33 +377,22 @@
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .interesting-links img:hover {
-            transform: scale(1.05);
         }
 
         .contact-links a {
             text-decoration: none;
-            color: #2c2c2c;
+            color: #fff;
             font-weight: 500;
             padding: 0.8rem 1.5rem;
-            border: 1px solid #2c2c2c;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-links a:hover {
-            background: #2c2c2c;
-            color: white;
+            border: 1px solid #fff;
+            border-radius: 0;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 3rem 2rem;
-            color: #666;
+            color: #fff;
             font-size: 0.9rem;
         }
 
@@ -535,51 +491,35 @@
         <div class="group-projects">
             <div class="projects-grid">
                 <div class="project-tile" data-project="pro-scraper">
-                    <img src="images/1.jpg" alt="Pro Scraper – Data Extraction from Insurer Sites">
                     <h3>Pro Scraper – Data Extraction from Insurer Sites</h3>
-                    <p>LLM-powered console tool converting insurer HTML to structured JSON, cutting extraction time from weeks to days.</p>
                 </div>
 
                 <div class="project-tile" data-project="semantic-mapper">
-                    <img src="images/2.jpg" alt="Semantic Mapper for Trade Descriptions Mapping">
                     <h3>Semantic Mapper – Trade Descriptions Mapping</h3>
-                    <p>Local LLM solution aligning trade descriptions with a master list for quick, accurate mappings.</p>
                 </div>
 
                 <div class="project-tile" data-project="adaptive-browser-agent">
-                    <img src="images/3.jpg" alt="Adaptive Browser Automation POC">
                     <h3>Adaptive Browser Automation</h3>
-                    <p>Multimodal agent translating plain-English commands into actions for flexible portal automation.</p>
                 </div>
 
                 <div class="project-tile" data-project="rule-to-js">
-                    <img src="images/5.jpg" alt="Business Rule-to-JavaScript Converter">
                     <h3>Business Rule-to-JavaScript Converter</h3>
-                    <p>Python tool generating validated JavaScript and tests from structured business rules.</p>
                 </div>
 
                 <div class="project-tile" data-project="gcp-workflows">
-                    <img src="images/14.jpg" alt="Automated Data Workflows">
                     <h3>Automated Data Workflows</h3>
-                    <p>GCP, Vertex AI and Python solutions for automated data processing and workflow management.</p>
                 </div>
 
                 <div class="project-tile" data-project="claude-reports">
-                    <img src="images/17.jpg" alt="Claude-Based Report Generation">
                     <h3>Claude-Based Report Generation</h3>
-                    <p>Automated connection reports for Legacy Systems using Claude AI technology.</p>
                 </div>
 
                 <div class="project-tile" data-project="instant-graph">
-                    <img src="images/18.jpg" alt="Instant Data-to-Graph UI">
                     <h3>Instant Data-to-Graph UI</h3>
-                    <p>Drop a data file and instantly view interactive graphs in a Streamlit interface.</p>
                 </div>
 
                 <div class="project-tile" data-project="predictive-maintenance">
-                    <img src="images/9.jpg" alt="Accelerated Root Cause Analysis (Mitsubishi)">
                     <h3>Accelerated Root Cause Analysis</h3>
-                    <p>WPS Analytics models forecasting turbine failures 24 hours early to speed root cause analysis.</p>
                 </div>
             </div>
         </div>
@@ -615,45 +555,31 @@
         <div class="group-projects">
             <div class="projects-grid">
                 <div class="project-tile" data-project="solidatus-ingestion">
-                    <img src="images/8.jpg" alt="Automated Data Integration Solutions (Solidatus)">
                     <h3>Automated Data Integration Solutions (Solidatus)</h3>
-                    <p>Configurable connectors standardising file ingestion into Solidatus, reclaiming 200+ hours monthly.</p>
                 </div>
 
                 <div class="project-tile" data-project="regulatory-compliance">
-                    <img src="images/10.jpg" alt="Strengthened Regulatory Compliance (BNYM)">
                     <h3>Strengthened Regulatory Compliance</h3>
-                    <p>Developed 250+ data lineage models for transparent, reliable reporting at BNYM.</p>
                 </div>
 
                 <div class="project-tile" data-project="markets-architecture">
-                    <img src="images/11.jpg" alt="Transformed Global Markets Architecture (BOFA)">
                     <h3>Transformed Global Markets Architecture</h3>
-                    <p>Automated diagrams of 400+ systems with scheduled updates for informed decision making.</p>
                 </div>
 
                 <div class="project-tile" data-project="axiom-connector">
-                    <img src="images/12.jpg" alt="Engineered the Custom Connector (Axiom)">
                     <h3>Engineered the Custom Connector</h3>
-                    <p>Reusable pipeline integrating Axiom with regulatory tools, halving reporting cycles.</p>
                 </div>
 
                 <div class="project-tile" data-project="regulatory-design">
-                    <img src="images/13.jpg" alt="Enhanced Regulatory Design (LSEG)">
                     <h3>Enhanced Regulatory Design </h3>
-                    <p>Power BI and NLP analysis revealing sentiment trends and reducing survey effort by 50%.</p>
                 </div>
 
                 <div class="project-tile" data-project="fraxses-layer">
-                    <img src="images/7.jpg" alt="Unified Data Access Layer (Beneficient)">
                     <h3>Unified Data Access Layer</h3>
-                    <p>Federated Fraxses models giving governed, virtual access to distributed datasets.</p>
                 </div>
 
                 <div class="project-tile" data-project="insurer-automation">
-                    <img src="images/6.jpg" alt="Insurer Site Automation and Logic Engineering">
                     <h3>Insurer Site Automation and Logic Engineering</h3>
-                    <p>Selenium-driven flows mapping question sets to product parameters with reliable validation logic.</p>
                 </div>
             </div>
         </div>
@@ -688,27 +614,19 @@
         <div class="group-projects">
             <div class="projects-grid">
                 <div class="project-tile" data-project="mentorship-leadership">
-                    <img src="images/4.jpg" alt="Mentorship and Scalable Solution Leadership">
                     <h3>Mentorship and Scalable Solution Leadership</h3>
-                    <p>Guided teams through reusable workflows and documentation, enabling rapid onboarding and delivery.</p>
                 </div>
 
                 <div class="project-tile" data-project="process-docs">
-                    <img src="images/15.jpg" alt="Process Documentation and Knowledge Sharing">
                     <h3>Process Documentation and Knowledge Sharing</h3>
-                    <p>Established a central knowledge base and standard operating procedures for all major workflows.</p>
                 </div>
 
                 <div class="project-tile" data-project="hands-on-training">
-                    <img src="images/16.jpg" alt="Hands-on Technical Training and Enablement">
                     <h3>Hands-on Technical Training and Enablement</h3>
-                    <p>Delivered workshops and pair programming sessions to accelerate team adoption of new tools.</p>
                 </div>
 
                 <div class="project-tile" data-project="client-collaboration">
-                    <img src="images/19.jpg" alt="Stakeholder &amp; Client Collaboration">
                     <h3>Stakeholder &amp; Client Collaboration</h3>
-                    <p>Worked closely with clients and stakeholders to align technical solutions with business goals.</p>
                 </div>
             </div>
         </div>
