@@ -223,22 +223,24 @@
 
         .skills-block {
             border: 1px solid #fff;
-            padding: 1rem;
-            display: flex;
-            flex-wrap: wrap;
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
+            min-height: 200px;
         }
 
         .skill-label {
             font-size: 0.9rem;
             color: #fff;
+            text-align: center;
         }
 
         .project-tile {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
+            justify-content: flex-start;
             aspect-ratio: 1 / 1;
             padding: 1rem;
             color: #000;
@@ -247,6 +249,8 @@
             background: #fff;
             transition: background 0.3s ease;
             font-size: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .project-tile:hover {
@@ -269,13 +273,15 @@
             height: 30%;
             object-fit: cover;
             margin-top: auto;
+            border-radius: 8px;
         }
 
         .project-tile h3 {
             font-size: 1.1rem;
-            font-weight: 400;
-            margin: 0 0 0.5rem 0;
+            font-weight: 300;
+            margin: auto 0;
             color: #000;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
 
