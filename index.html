@@ -236,11 +236,12 @@
 
         .project-tile {
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
             aspect-ratio: 1 / 1;
             padding: 1rem;
-            color: #000000;
+            color: #000;
             cursor: pointer;
             text-align: center;
             background: #fff;
@@ -263,14 +264,18 @@
 
 
         .project-tile img {
-            display: none;
+            display: block;
+            width: 100%;
+            height: 30%;
+            object-fit: cover;
+            margin-top: auto;
         }
 
         .project-tile h3 {
             font-size: 1.1rem;
             font-weight: 400;
-            margin: 0;
-            color: #fff;
+            margin: 0 0 0.5rem 0;
+            color: #000;
         }
 
 
@@ -518,34 +523,42 @@
             <div class="projects-grid">
                 <div class="project-tile" data-project="pro-scraper">
                     <h3>Pro Scraper – Data Extraction from Insurer Sites</h3>
+                    <img src="images/1.jpg" alt="Pro Scraper">
                 </div>
 
                 <div class="project-tile" data-project="semantic-mapper">
                     <h3>Semantic Mapper – Trade Descriptions Mapping</h3>
+                    <img src="images/2.jpg" alt="Semantic Mapper">
                 </div>
 
                 <div class="project-tile" data-project="adaptive-browser-agent">
                     <h3>Adaptive Browser Automation</h3>
+                    <img src="images/3.jpg" alt="Adaptive Browser Automation">
                 </div>
 
                 <div class="project-tile" data-project="rule-to-js">
                     <h3>Business Rule-to-JavaScript Converter</h3>
+                    <img src="images/4.jpg" alt="Business Rule Converter">
                 </div>
 
                 <div class="project-tile" data-project="gcp-workflows">
                     <h3>Automated Data Workflows</h3>
+                    <img src="images/5.jpg" alt="Automated Data Workflows">
                 </div>
 
                 <div class="project-tile" data-project="claude-reports">
                     <h3>Claude-Based Report Generation</h3>
+                    <img src="images/6.jpg" alt="Claude-Based Reports">
                 </div>
 
                 <div class="project-tile" data-project="instant-graph">
                     <h3>Instant Data-to-Graph UI</h3>
+                    <img src="images/7.jpg" alt="Instant Graph UI">
                 </div>
 
                 <div class="project-tile" data-project="predictive-maintenance">
                     <h3>Accelerated Root Cause Analysis</h3>
+                    <img src="images/8.jpg" alt="Predictive Maintenance">
                 </div>
             </div>
         </div>
@@ -583,30 +596,37 @@
             <div class="projects-grid">
                 <div class="project-tile" data-project="solidatus-ingestion">
                     <h3>Automated Data Integration Solutions (Solidatus)</h3>
+                    <img src="images/9.jpg" alt="Solidatus Ingestion">
                 </div>
 
                 <div class="project-tile" data-project="regulatory-compliance">
                     <h3>Strengthened Regulatory Compliance</h3>
+                    <img src="images/10.jpg" alt="Regulatory Compliance">
                 </div>
 
                 <div class="project-tile" data-project="markets-architecture">
                     <h3>Transformed Global Markets Architecture</h3>
+                    <img src="images/11.jpg" alt="Markets Architecture">
                 </div>
 
                 <div class="project-tile" data-project="axiom-connector">
                     <h3>Engineered the Custom Connector</h3>
+                    <img src="images/12.jpg" alt="Axiom Connector">
                 </div>
 
                 <div class="project-tile" data-project="regulatory-design">
                     <h3>Enhanced Regulatory Design </h3>
+                    <img src="images/13.jpg" alt="Regulatory Design">
                 </div>
 
                 <div class="project-tile" data-project="fraxses-layer">
                     <h3>Unified Data Access Layer</h3>
+                    <img src="images/14.jpg" alt="Fraxses Layer">
                 </div>
 
                 <div class="project-tile" data-project="insurer-automation">
                     <h3>Insurer Site Automation and Logic Engineering</h3>
+                    <img src="images/15.jpg" alt="Insurer Automation">
                 </div>
             </div>
         </div>
@@ -643,18 +663,22 @@
             <div class="projects-grid">
                 <div class="project-tile" data-project="mentorship-leadership">
                     <h3>Mentorship and Scalable Solution Leadership</h3>
+                    <img src="images/16.jpg" alt="Mentorship Leadership">
                 </div>
 
                 <div class="project-tile" data-project="process-docs">
                     <h3>Process Documentation and Knowledge Sharing</h3>
+                    <img src="images/17.jpg" alt="Process Documentation">
                 </div>
 
                 <div class="project-tile" data-project="hands-on-training">
                     <h3>Hands-on Technical Training and Enablement</h3>
+                    <img src="images/18.jpg" alt="Hands-on Training">
                 </div>
 
                 <div class="project-tile" data-project="client-collaboration">
                     <h3>Stakeholder &amp; Client Collaboration</h3>
+                    <img src="images/19.jpg" alt="Client Collaboration">
                 </div>
             </div>
         </div>
