@@ -572,6 +572,26 @@
                     <h3>Accelerated Root Cause Analysis</h3>
                     <img src="images/8.jpg" alt="Predictive Maintenance">
                 </div>
+                <div class="project-tile" data-project="vertex-automl">
+                    <h3>Predicting Term Deposit Subscriptions</h3>
+                    <img src="images/15.jpg" alt="Vertex AutoML">
+                </div>
+                <div class="project-tile" data-project="bqml-churn">
+                    <h3>Telecom Customer Churn Prediction</h3>
+                    <img src="images/16.jpg" alt="BigQuery ML Churn">
+                </div>
+                <div class="project-tile" data-project="python-rag-chatbot">
+                    <h3>Python Docs Chatbot with RAG</h3>
+                    <img src="images/17.jpg" alt="Python RAG Chatbot">
+                </div>
+                <div class="project-tile" data-project="gemini-finetune">
+                    <h3>Fine-Tuning Gemini for Support Emails</h3>
+                    <img src="images/18.jpg" alt="Gemini Email">
+                </div>
+                <div class="project-tile" data-project="invoice-agents">
+                    <h3>Multi-Agent Invoice Generation</h3>
+                    <img src="images/19.jpg" alt="Invoice Agents">
+                </div>
             </div>
         </div>
         <div class="group-skills">
@@ -848,6 +868,61 @@
                         <li><strong>Solution:</strong> Leveraged WPS Analytics and ML Workbench to predict failures up to 24 hours in advance and streamline root cause identification.</li>
                         <li><strong>Business Impact:</strong> Improved operational responsiveness and provided practical insights into industrial ML applications.</li>
                         <li><strong>Tech Stack:</strong> WPS Analytics, WPS ML Workbench</li>
+                    </ul>
+                `
+            },
+            'vertex-automl': {
+                title: 'Predicting Term Deposit Subscriptions with Vertex AutoML',
+                content: `
+                    <ul>
+                        <li><strong>Problem:</strong> Banks needed a scalable way to identify customers likely to subscribe to term deposits.</li>
+                        <li><strong>Solution:</strong> Trained a classification model using Vertex AI AutoML Tabular and deployed it for real-time inference.</li>
+                        <li><strong>Business Impact:</strong> Reduces manual segmentation and increases campaign efficiency.</li>
+                        <li><strong>Tech Stack:</strong> Vertex AI AutoML, GCS, Vertex Workbench, Python SDK</li>
+                    </ul>
+                `
+            },
+            'bqml-churn': {
+                title: 'Telecom Customer Churn Prediction with BigQuery ML',
+                content: `
+                    <ul>
+                        <li><strong>Problem:</strong> Telecom providers needed to predict customer churn to prioritise retention efforts.</li>
+                        <li><strong>Solution:</strong> Trained a boosted-tree model in BigQuery ML and served predictions through a Streamlit app.</li>
+                        <li><strong>Business Impact:</strong> Enables proactive retention strategies by flagging high-risk customers.</li>
+                        <li><strong>Tech Stack:</strong> BigQuery ML, GCS, Vertex AI, Streamlit</li>
+                    </ul>
+                `
+            },
+            'python-rag-chatbot': {
+                title: 'Python Docs Q&A Chatbot using RAG',
+                content: `
+                    <ul>
+                        <li><strong>Problem:</strong> Static Python documentation PDFs were difficult to search interactively.</li>
+                        <li><strong>Solution:</strong> Indexed the docs with Vertex RAG Engine and Gemini, deploying a chatbot on Cloud Run.</li>
+                        <li><strong>Business Impact:</strong> Turns unstructured docs into an interactive, searchable experience.</li>
+                        <li><strong>Tech Stack:</strong> Vertex RAG Engine, Gemini, GCS, Cloud Run</li>
+                    </ul>
+                `
+            },
+            'gemini-finetune': {
+                title: 'Fine-Tuning Gemini for Customer Support Email Drafting',
+                content: `
+                    <ul>
+                        <li><strong>Problem:</strong> Drafting consistent customer support emails was labour intensive.</li>
+                        <li><strong>Solution:</strong> Fine-tuned Gemini Flash Lite on sample issue-response pairs to generate templated replies.</li>
+                        <li><strong>Business Impact:</strong> Automates branded, coherent customer support emails.</li>
+                        <li><strong>Tech Stack:</strong> Gemini 2.0 Flash Lite, Vertex AI Tuning, GCS</li>
+                    </ul>
+                `
+            },
+            'invoice-agents': {
+                title: 'Multi-Agent Workflow for Automated Invoice Generation',
+                content: `
+                    <ul>
+                        <li><strong>Problem:</strong> Generating invoices from order images required multiple manual steps.</li>
+                        <li><strong>Solution:</strong> Streamlit app used GPT-4o Vision and modular agents to extract details, calculate totals, create a PDF and email it.</li>
+                        <li><strong>Business Impact:</strong> Fully automates invoice processing from image to email.</li>
+                        <li><strong>Tech Stack:</strong> Streamlit, OpenAI Vision API, JSON, ReportLab, Gmail API</li>
                     </ul>
                 `
             },
