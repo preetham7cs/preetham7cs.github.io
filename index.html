@@ -564,7 +564,7 @@
                 </div>
 
                 <div class="project-tile" data-project="instant-graph">
-                    <h3>Instant Data-to-Graph UI</h3>
+                    <h3>Instant Data-to-Graph UI (Postgres, LLM, Solidatus)</h3>
                     <img src="images/7.jpg" alt="Instant Graph UI">
                 </div>
 
@@ -903,12 +903,13 @@
             },
 
             'instant-graph': {
-                title: 'Instant Data-to-Graph UI',
+                title: 'Instant Data-to-Graph UI (Postgres, LLM, Solidatus)',
                 content: `
                     <ul>
-                        <li>Streamlit interface turning CSV data into interactive graphs instantly.</li>
-                        <li>Allowed quick exploration of datasets with zero coding.</li>
-                        <li>Enabled business teams to visualise information on demand.</li>
+                        <li><strong>Problem:</strong> Preparing data for ingestion into Solidatus, a graph-based data lineage tool, was previously a time-consuming, multi-step process. Clients often provided access to their data via a virtual database, requiring analysts to get their data from there. Later, converting this into the format required by Solidatus meant manually interpreting, changing and sometimes unclear requirements to build the right structure. Multiple data tables frequently needed to be stitched together through custom joins, adding further complexity. This process required constant developer involvement, lacked flexibility, and couldn't support fast experimentation, slowing down delivery.</li>
+                        <li><strong>Solution:</strong> Developed a fully containerised Streamlit application that empowered analysts to generate lineage models from natural language prompts. Users could enter plain-English instructions (e.g., "Show a lineage between users and their purchases over the past 2 years") and optionally select relevant tables from the connected Postgres database. The input was processed using an LLM (configurable to use OpenAI APIs or local Ollama models), which generated an optimised SQL query to fetch the required data. The resulting table was displayed within the app and immediately passed to the next step: a drag-and-drop visual interface where users could configure the Solidatus lineage model template. This UI mapped each column to lineage-specific fields (e.g., Source Entity, Target Attribute, etc.) using a predefined structure. Once the user finished configuring the mapping, the app converted it into a Solidatus-compatible JSON config and triggered model creation through the Solidatus API. If changes were needed, users could simply adjust the config via the UI and regenerate the model instantly, without needing any code modifications. The app was designed to be highly extensible, supporting expansion to other output formats or target systems.</li>
+                        <li><strong>Business Impact:</strong> This solution eliminated the dependency on developers for model prototyping, cutting model preparation time from hours or even days to just minutes. It saved over 200 hours per month in data transformation effort, significantly accelerated prototyping, and allowed SMEs and analysts, even without coding expertise, to experiment and build production-grade lineage models on the fly. The low learning curve, instant feedback loop, and integration with Solidatus made it the go-to tool for all lineage-related transformations in the workflow. It also laid the groundwork for future expansion to other lineage tools or output formats.</li>
+                        <li><strong>Tech Stack:</strong> Streamlit, OpenAI API / Ollama (LLM), PostgreSQL, Solidatus, Python, Docker</li>
                     </ul> `
             },
 
