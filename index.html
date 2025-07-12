@@ -776,9 +776,9 @@
                 title: 'Pro Scraper – Data Extraction from Insurer Sites',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Insurer portals had dynamic layouts and no export option, forcing weeks of fragile copy/paste or custom JavaScript to capture question sets.</li>
-                        <li><strong>Solution:</strong> Containerised Streamlit app sends pasted HTML to ChatGPT preloaded with our schema, returning questions and logic in Excel and JSON with a quick human review step.</li>
-                        <li><strong>Business Impact:</strong> Reduced extraction time from 1–2 weeks to 1–2 days and removed the need for specialised scripting.</li>
+                        <li><strong>Problem:</strong> Insurer portals had dynamic layouts and no export option, forcing weeks of fragile copy/paste or custom JavaScript to capture question sets. Manual steps frequently produced errors.</li>
+                        <li><strong>Solution:</strong> Containerised Streamlit app sends pasted HTML to ChatGPT preloaded with our schema, returning questions and logic in Excel and JSON with a quick human review step. Ensures consistent parsing and reliability.</li>
+                        <li><strong>Business Impact:</strong> Reduced extraction time from 1–2 weeks to 1–2 days and removed the need for specialised scripting. Accelerated onboarding for insurer clients.</li>
                         <li><strong>Tech Stack:</strong> Streamlit, OpenAI API (GPT‑4o‑mini), Python, Docker, Excel/JSON</li>
                     </ul>
                 `
@@ -787,9 +787,9 @@
                 title: 'Semantic Mapper – Trade Descriptions Mapping',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Insurers listed hundreds of trades with inconsistent naming, making alignment to our master list slow and error‑prone.</li>
-                        <li><strong>Solution:</strong> Streamlit tool filters exact matches then sends the rest to ChatGPT, combining classical similarity scores with LLM reasoning to suggest the closest master trade and risk level for review.</li>
-                        <li><strong>Business Impact:</strong> Mapping time dropped from 4 weeks to 2 days while boosting accuracy and reducing analyst workload.</li>
+                        <li><strong>Problem:</strong> Insurers listed hundreds of trades with inconsistent naming, making alignment to our master list slow and error‑prone. Confusion wasted time for analysts.</li>
+                        <li><strong>Solution:</strong> Streamlit tool filters exact matches then sends the rest to ChatGPT, combining classical similarity scores with LLM reasoning to suggest the closest master trade and risk level for review. Streamlines manual checks and reviews.</li>
+                        <li><strong>Business Impact:</strong> Mapping time dropped from 4 weeks to 2 days while boosting accuracy and reducing analyst workload. Freed analysts for complex work.</li>
                         <li><strong>Tech Stack:</strong> Python (fuzzywuzzy, Jaccard, cosine, Jaro‑Winkler), OpenAI API, Streamlit, pandas, Docker, Excel/JSON</li>
                     </ul>
                 `
@@ -798,9 +798,9 @@
                 title: 'Adaptive Browser Automation POC',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Custom RPA scripts were required for each insurer site, resulting in long build cycles and fragile maintenance.</li>
-                        <li><strong>Solution:</strong> Built an "Adaptive Browser Agent" that combines automation APIs with a multimodal LLM to interpret pages and execute plain‑English commands.</li>
-                        <li><strong>Business Impact:</strong> Demonstrated an end-to-end quoting flow, leading to a re-evaluation of future automation tooling towards this flexible ML-driven approach.</li>
+                        <li><strong>Problem:</strong> Custom RPA scripts were required for each insurer site, resulting in long build cycles and fragile maintenance. Scripts were brittle and costly.</li>
+                        <li><strong>Solution:</strong> Built an "Adaptive Browser Agent" that combines automation APIs with a multimodal LLM to interpret pages and execute plain‑English commands. Adapts quickly across varied page layouts.</li>
+                        <li><strong>Business Impact:</strong> Demonstrated an end-to-end quoting flow, leading to a re-evaluation of future automation tooling towards this flexible ML-driven approach. Cuts automation build time dramatically.</li>
                         <li><strong>Tech Stack:</strong> Automation APIs, Multimodal LLM, RPA Scripts, Python</li>
                     </ul>
                 `
@@ -809,9 +809,9 @@
                 title: 'Mentorship and Scalable Solution Leadership',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Teams required guidance and consistent practices to accelerate delivery across diverse projects.</li>
-                        <li><strong>Solution:</strong> Provided mentorship on Solidatus, Fraxses and Power BI, sharing reusable frameworks and best practices.</li>
-                        <li><strong>Business Impact:</strong> Upskilling initiatives reduced onboarding time and improved overall delivery speed.</li>
+                        <li><strong>Problem:</strong> Teams required guidance and consistent practices to accelerate delivery across diverse projects. Lack of standards slowed collaboration.</li>
+                        <li><strong>Solution:</strong> Provided mentorship on Solidatus, Fraxses and Power BI, sharing reusable frameworks and best practices. Established templates and shared playbooks.</li>
+                        <li><strong>Business Impact:</strong> Upskilling initiatives reduced onboarding time and improved overall delivery speed. Boosted morale and cross-project efficiency.</li>
                         <li><strong>Tech Stack:</strong> Solidatus, Fraxses, Power BI, Python</li>
                     </ul>
                 `
@@ -820,9 +820,9 @@
                 title: 'Business Rule-to-JavaScript Converter',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Insurer portals relied on large JavaScript codebases for calculations, flows and validations.</li>
-                        <li><strong>Solution:</strong> Created an automated converter in Python using a local LLM to transform structured rules into validated JavaScript, JSON parameters and tests.</li>
-                        <li><strong>Business Impact:</strong> Cut implementation from two weeks to two days while keeping processing secure on local infrastructure.</li>
+                        <li><strong>Problem:</strong> Insurer portals relied on large JavaScript codebases for calculations, flows and validations. Manual coding slowed updates significantly.</li>
+                        <li><strong>Solution:</strong> Created an automated converter in Python using a local LLM to transform structured rules into validated JavaScript, JSON parameters and tests. Auto-generation reduced mistakes and effort.</li>
+                        <li><strong>Business Impact:</strong> Cut implementation from two weeks to two days while keeping processing secure on local infrastructure. Enabled rapid changes without extra risk.</li>
                         <li><strong>Tech Stack:</strong> Python, Local LLM, JavaScript, JSON</li>
                     </ul>
                 `
@@ -831,9 +831,9 @@
                 title: 'Insurer Site Automation and Logic Engineering',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Dynamic insurer question sets required complex mapping and custom automation scripts.</li>
-                        <li><strong>Solution:</strong> Automated the mapping in Airtable and executed flows via Selenium while providing JavaScript logic for validations and calculations.</li>
-                        <li><strong>Business Impact:</strong> Streamlined QA with Selenium-based tests and improved consistency across insurer platforms.</li>
+                        <li><strong>Problem:</strong> Dynamic insurer question sets required complex mapping and custom automation scripts. Manual mapping slowed integration efforts.</li>
+                        <li><strong>Solution:</strong> Automated the mapping in Airtable and executed flows via Selenium while providing JavaScript logic for validations and calculations. Reusable scripts decreased maintenance overhead.</li>
+                        <li><strong>Business Impact:</strong> Streamlined QA with Selenium-based tests and improved consistency across insurer platforms. Improved speed helped release features sooner.</li>
                         <li><strong>Tech Stack:</strong> Airtable, Selenium, JavaScript</li>
                     </ul>
                 `
@@ -842,9 +842,9 @@
                 title: 'Unified Data Access Layer (Beneficient)',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Distributed datasets were difficult to access and integrate for reporting.</li>
-                        <li><strong>Solution:</strong> Implemented a scalable data workbench in Fraxses and built federated models to unify sources into consumable tables and views.</li>
-                        <li><strong>Business Impact:</strong> Reduced data access time and empowered business users with governed datasets for faster reporting.</li>
+                        <li><strong>Problem:</strong> Distributed datasets were difficult to access and integrate for reporting. Every request required manual gathering.</li>
+                        <li><strong>Solution:</strong> Implemented a scalable data workbench in Fraxses and built federated models to unify sources into consumable tables and views. Central hub simplifies cross-source analytics.</li>
+                        <li><strong>Business Impact:</strong> Reduced data access time and empowered business users with governed datasets for faster reporting. Faster insights enabled quicker decision making.</li>
                         <li><strong>Tech Stack:</strong> Fraxses, Data Virtualisation, Python</li>
                     </ul>
                 `
@@ -853,9 +853,9 @@
                 title: 'Automated Data Integration Solutions (Solidatus)',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Flat files had to be ingested into Solidatus manually, leading to errors and inefficiency.</li>
-                        <li><strong>Solution:</strong> Built configurable connectors with a user-friendly interface to automate ingestion and transformation.</li>
-                        <li><strong>Business Impact:</strong> Became the standard method for lineage population, saving over 200 hours per month across engagements.</li>
+                        <li><strong>Problem:</strong> Flat files had to be ingested into Solidatus manually, leading to errors and inefficiency. Manual ingestion slowed work, causing errors.</li>
+                        <li><strong>Solution:</strong> Built configurable connectors with a user-friendly interface to automate ingestion and transformation. Interface reduced training time for users.</li>
+                        <li><strong>Business Impact:</strong> Became the standard method for lineage population, saving over 200 hours per month across engagements. Standardisation cut onboarding and support costs.</li>
                         <li><strong>Tech Stack:</strong> Solidatus, Python, ETL Frameworks</li>
                     </ul>
                 `
@@ -864,9 +864,9 @@
                 title: 'Accelerated Root Cause Analysis (Mitsubishi)',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Needed early detection of turbine failures to reduce downtime.</li>
-                        <li><strong>Solution:</strong> Leveraged WPS Analytics and ML Workbench to predict failures up to 24 hours in advance and streamline root cause identification.</li>
-                        <li><strong>Business Impact:</strong> Improved operational responsiveness and provided practical insights into industrial ML applications.</li>
+                        <li><strong>Problem:</strong> Needed early detection of turbine failures to reduce downtime. Unexpected failures stalled production schedules.</li>
+                        <li><strong>Solution:</strong> Leveraged WPS Analytics and ML Workbench to predict failures up to 24 hours in advance and streamline root cause identification. Automated alerts gave teams lead time.</li>
+                        <li><strong>Business Impact:</strong> Improved operational responsiveness and provided practical insights into industrial ML applications. Reduced downtime saved significant repair costs.</li>
                         <li><strong>Tech Stack:</strong> WPS Analytics, WPS ML Workbench</li>
                     </ul>
                 `
@@ -875,9 +875,9 @@
                 title: 'Predicting Term Deposit Subscriptions with Vertex AutoML',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Banks needed a scalable way to identify customers likely to subscribe to term deposits.</li>
-                        <li><strong>Solution:</strong> Trained a classification model using Vertex AI AutoML Tabular and deployed it for real-time inference.</li>
-                        <li><strong>Business Impact:</strong> Reduces manual segmentation and increases campaign efficiency.</li>
+                        <li><strong>Problem:</strong> Banks needed a scalable way to identify customers likely to subscribe to term deposits. Manual targeting wasted valuable marketing spend.</li>
+                        <li><strong>Solution:</strong> Trained a classification model using Vertex AI AutoML Tabular and deployed it for real-time inference. Model features included demographics and behaviour.</li>
+                        <li><strong>Business Impact:</strong> Reduces manual segmentation and increases campaign efficiency. Higher precision improved sales conversion rates.</li>
                         <li><strong>Tech Stack:</strong> Vertex AI AutoML, GCS, Vertex Workbench, Python SDK</li>
                     </ul>
                 `
@@ -886,9 +886,9 @@
                 title: 'Telecom Customer Churn Prediction with BigQuery ML',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Telecom providers needed to predict customer churn to prioritise retention efforts.</li>
-                        <li><strong>Solution:</strong> Trained a boosted-tree model in BigQuery ML and served predictions through a Streamlit app.</li>
-                        <li><strong>Business Impact:</strong> Enables proactive retention strategies by flagging high-risk customers.</li>
+                        <li><strong>Problem:</strong> Telecom providers needed to predict customer churn to prioritise retention efforts. Losses from churn impacted profits heavily.</li>
+                        <li><strong>Solution:</strong> Trained a boosted-tree model in BigQuery ML and served predictions through a Streamlit app. Automated updates keep model performance high.</li>
+                        <li><strong>Business Impact:</strong> Enables proactive retention strategies by flagging high-risk customers. Better retention improved long-term revenue.</li>
                         <li><strong>Tech Stack:</strong> BigQuery ML, GCS, Vertex AI, Streamlit</li>
                     </ul>
                 `
@@ -897,9 +897,9 @@
                 title: 'Python Docs Q&A Chatbot using RAG',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Static Python documentation PDFs were difficult to search interactively.</li>
-                        <li><strong>Solution:</strong> Indexed the docs with Vertex RAG Engine and Gemini, deploying a chatbot on Cloud Run.</li>
-                        <li><strong>Business Impact:</strong> Turns unstructured docs into an interactive, searchable experience.</li>
+                        <li><strong>Problem:</strong> Static Python documentation PDFs were difficult to search interactively. Users wasted time flipping through pages.</li>
+                        <li><strong>Solution:</strong> Indexed the docs with Vertex RAG Engine and Gemini, deploying a chatbot on Cloud Run. Pipeline uses embeddings for fast retrieval.</li>
+                        <li><strong>Business Impact:</strong> Turns unstructured docs into an interactive, searchable experience. Greater accessibility helps developers learn faster.</li>
                         <li><strong>Tech Stack:</strong> Vertex RAG Engine, Gemini, GCS, Cloud Run</li>
                     </ul>
                 `
@@ -908,9 +908,9 @@
                 title: 'Fine-Tuning Gemini for Customer Support Email Drafting',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Drafting consistent customer support emails was labour intensive.</li>
-                        <li><strong>Solution:</strong> Fine-tuned Gemini Flash Lite on sample issue-response pairs to generate templated replies.</li>
-                        <li><strong>Business Impact:</strong> Automates branded, coherent customer support emails.</li>
+                        <li><strong>Problem:</strong> Drafting consistent customer support emails was labour intensive. Agents spent hours drafting personalised responses.</li>
+                        <li><strong>Solution:</strong> Fine-tuned Gemini Flash Lite on sample issue-response pairs to generate templated replies. Model captures tone and brand guidelines.</li>
+                        <li><strong>Business Impact:</strong> Automates branded, coherent customer support emails. Faster replies improved customer satisfaction scores.</li>
                         <li><strong>Tech Stack:</strong> Gemini 2.0 Flash Lite, Vertex AI Tuning, GCS</li>
                     </ul>
                 `
@@ -919,9 +919,9 @@
                 title: 'Multi-Agent Workflow for Automated Invoice Generation',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Generating invoices from order images required multiple manual steps.</li>
-                        <li><strong>Solution:</strong> Streamlit app used GPT-4o Vision and modular agents to extract details, calculate totals, create a PDF and email it.</li>
-                        <li><strong>Business Impact:</strong> Fully automates invoice processing from image to email.</li>
+                        <li><strong>Problem:</strong> Generating invoices from order images required multiple manual steps. Manual entry caused delayed billing cycles.</li>
+                        <li><strong>Solution:</strong> Streamlit app used GPT-4o Vision and modular agents to extract details, calculate totals, create a PDF and email it. Workflow reduces human touchpoints dramatically.</li>
+                        <li><strong>Business Impact:</strong> Fully automates invoice processing from image to email. Faster invoicing improved cash flow stability.</li>
                         <li><strong>Tech Stack:</strong> Streamlit, OpenAI Vision API, JSON, ReportLab, Gmail API</li>
                     </ul>
                 `
@@ -930,9 +930,9 @@
                 title: 'Strengthened Regulatory Compliance (BNYM)',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Inconsistent data flows and missing lineage hindered regulatory reporting.</li>
-                        <li><strong>Solution:</strong> Created over 200 atomic and 50 consolidated lineage models using Solidatus and Python.</li>
-                        <li><strong>Business Impact:</strong> Enabled reliable FR2052A reporting and reduced compliance overhead by bringing transparency to data movement.</li>
+                        <li><strong>Problem:</strong> Inconsistent data flows and missing lineage hindered regulatory reporting. Audit gaps raised risk of fines.</li>
+                        <li><strong>Solution:</strong> Created over 200 atomic and 50 consolidated lineage models using Solidatus and Python. Reusable templates ensured accurate lineage outputs.</li>
+                        <li><strong>Business Impact:</strong> Enabled reliable FR2052A reporting and reduced compliance overhead by bringing transparency to data movement. Compliance teams trust data lineage processes.</li>
                         <li><strong>Tech Stack:</strong> Solidatus, Python</li>
                     </ul>
                 `
@@ -941,9 +941,9 @@
                 title: 'Transformed Global Markets Architecture (BOFA)',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Architecture diagrams of over 400 systems were outdated and difficult to maintain.</li>
-                        <li><strong>Solution:</strong> Produced dynamic Visio and Lucidchart diagrams with automated scheduled updates.</li>
-                        <li><strong>Business Impact:</strong> Provided leadership with a trusted decision-making tool and improved stakeholder alignment.</li>
+                        <li><strong>Problem:</strong> Architecture diagrams of over 400 systems were outdated and difficult to maintain. Teams lacked visibility into system relationships.</li>
+                        <li><strong>Solution:</strong> Produced dynamic Visio and Lucidchart diagrams with automated scheduled updates. Visual automation keeps diagrams current effortlessly.</li>
+                        <li><strong>Business Impact:</strong> Provided leadership with a trusted decision-making tool and improved stakeholder alignment. Clear views supported strategic planning initiatives.</li>
                         <li><strong>Tech Stack:</strong> Visio, Lucidchart, Automation Scripts</li>
                     </ul>
                 `
@@ -952,9 +952,9 @@
                 title: 'Engineered the Custom Connector (Axiom)',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Data transformation between Axiom and other regulatory tools required significant manual effort.</li>
-                        <li><strong>Solution:</strong> Designed and led development of a pipeline integrating Axiom with ASG, Collibra, Solidatus and EDC, automating transformation logic.</li>
-                        <li><strong>Business Impact:</strong> Cut reporting cycles by 50% and improved the quality and trustworthiness of regulatory data.</li>
+                        <li><strong>Problem:</strong> Data transformation between Axiom and other regulatory tools required significant manual effort. Manual pipelines delayed compliance reporting cycles.</li>
+                        <li><strong>Solution:</strong> Designed and led development of a pipeline integrating Axiom with ASG, Collibra, Solidatus and EDC, automating transformation logic. Pipeline architecture enables seamless data sharing.</li>
+                        <li><strong>Business Impact:</strong> Cut reporting cycles by 50% and improved the quality and trustworthiness of regulatory data. Shorter cycles freed analysts for value-add.</li>
                         <li><strong>Tech Stack:</strong> Axiom, ASG, Collibra, Solidatus, EDC, Python</li>
                     </ul>
                 `
@@ -963,9 +963,9 @@
                 title: 'Enhanced Regulatory Design (LSEG)',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Survey responses were time-consuming to review and difficult to analyse.</li>
-                        <li><strong>Solution:</strong> Built interactive Power BI dashboards and applied Python-based NLP, including word-cloud sentiment analysis.</li>
-                        <li><strong>Business Impact:</strong> Halved manual review effort and helped leadership prioritise improvements using real feedback trends.</li>
+                        <li><strong>Problem:</strong> Survey responses were time-consuming to review and difficult to analyse. Manual reviews delayed actionable insights.</li>
+                        <li><strong>Solution:</strong> Built interactive Power BI dashboards and applied Python-based NLP, including word-cloud sentiment analysis. Dashboards provided live sentiment and metrics.</li>
+                        <li><strong>Business Impact:</strong> Halved manual review effort and helped leadership prioritise improvements using real feedback trends. Leadership acted faster on customer feedback.</li>
                         <li><strong>Tech Stack:</strong> Power BI, Python (NLP)</li>
                     </ul>
                 `
@@ -974,9 +974,9 @@
                 title: 'Automated Data Workflows with GCP, Vertex AI and Python',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Document processing and data validation required manual effort and lacked scalability.</li>
-                        <li><strong>Solution:</strong> Built an AI-powered document processor with Vertex AI and Document AI, a Streamlit chatbot using LLMs and RAG, and a Cloud Functions validator writing results to BigQuery.</li>
-                        <li><strong>Business Impact:</strong> Automated ingestion and validation workflows, improving documentation support and enabling scalable reporting.</li>
+                        <li><strong>Problem:</strong> Document processing and data validation required manual effort and lacked scalability. Complex documents slowed validation across systems.</li>
+                        <li><strong>Solution:</strong> Built an AI-powered document processor with Vertex AI and Document AI, a Streamlit chatbot using LLMs and RAG, and a Cloud Functions validator writing results to BigQuery. Architecture scales easily to additional workloads.</li>
+                        <li><strong>Business Impact:</strong> Automated ingestion and validation workflows, improving documentation support and enabling scalable reporting. Lower costs and faster audits resulted.</li>
                         <li><strong>Tech Stack:</strong> Vertex AI, Document AI, Streamlit, Cloud Functions, BigQuery, Python, LLMs</li>
                     </ul> `
             },
@@ -985,9 +985,9 @@
                 title: 'Claude-Based Report Generation for Legacy Systems',
                 content: `
                    <ul>
-                      <li><strong>Problem:</strong> Legacy models, methodology documents and R scripts lacked a consistent mapping of relationships, hindering automation.</li>
-                      <li><strong>Solution:</strong> Developed a Claude-based multi-step process to extract and link unstructured elements into structured relationship tables.</li>
-                      <li><strong>Business Impact:</strong> Reduced manual effort and inconsistency by accelerating cross-component mapping and improving system integration.</li>
+                      <li><strong>Problem:</strong> Legacy models, methodology documents and R scripts lacked a consistent mapping of relationships, hindering automation. Documentation lacked structure for automation.</li>
+                      <li><strong>Solution:</strong> Developed a Claude-based multi-step process to extract and link unstructured elements into structured relationship tables. Pipeline organised data for quick analysis.</li>
+                      <li><strong>Business Impact:</strong> Reduced manual effort and inconsistency by accelerating cross-component mapping and improving system integration. Faster insights drove updates to models.</li>
                       <li><strong>Tech Stack:</strong> Claude LLM, Python, R</li>
                    </ul> `
             },
@@ -996,9 +996,9 @@
                 title: 'Instant Data-to-Graph UI (Postgres, LLM, Solidatus)',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Preparing data for ingestion into Solidatus, a graph-based data lineage tool, was previously a time-consuming, multi-step process. Clients often provided access to their data via a virtual database, requiring analysts to get their data from there. Later, converting this into the format required by Solidatus meant manually interpreting, changing and sometimes unclear requirements to build the right structure. Multiple data tables frequently needed to be stitched together through custom joins, adding further complexity. This process required constant developer involvement, lacked flexibility, and couldn't support fast experimentation, slowing down delivery.</li>
-                        <li><strong>Solution:</strong> Developed a fully containerised Streamlit application that empowered analysts to generate lineage models from natural language prompts. Users could enter plain-English instructions (e.g., "Show a lineage between users and their purchases over the past 2 years") and optionally select relevant tables from the connected Postgres database. The input was processed using an LLM (configurable to use OpenAI APIs or local Ollama models), which generated an optimised SQL query to fetch the required data. The resulting table was displayed within the app and immediately passed to the next step: a drag-and-drop visual interface where users could configure the Solidatus lineage model template. This UI mapped each column to lineage-specific fields (e.g., Source Entity, Target Attribute, etc.) using a predefined structure. Once the user finished configuring the mapping, the app converted it into a Solidatus-compatible JSON config and triggered model creation through the Solidatus API. If changes were needed, users could simply adjust the config via the UI and regenerate the model instantly, without needing any code modifications. The app was designed to be highly extensible, supporting expansion to other output formats or target systems.</li>
-                        <li><strong>Business Impact:</strong> This solution eliminated the dependency on developers for model prototyping, cutting model preparation time from hours or even days to just minutes. It saved over 200 hours per month in data transformation effort, significantly accelerated prototyping, and allowed SMEs and analysts, even without coding expertise, to experiment and build production-grade lineage models on the fly. The low learning curve, instant feedback loop, and integration with Solidatus made it the go-to tool for all lineage-related transformations in the workflow. It also laid the groundwork for future expansion to other lineage tools or output formats.</li>
+                        <li><strong>Problem:</strong> Preparing data for ingestion into Solidatus, a graph-based data lineage tool, was previously a time-consuming, multi-step process. Clients often provided access to their data via a virtual database, requiring analysts to get their data from there. Later, converting this into the format required by Solidatus meant manually interpreting, changing and sometimes unclear requirements to build the right structure. Multiple data tables frequently needed to be stitched together through custom joins, adding further complexity. This process required constant developer involvement, lacked flexibility, and couldn't support fast experimentation, slowing down delivery. Data sources varied widely and changed frequently.</li>
+                        <li><strong>Solution:</strong> Developed a fully containerised Streamlit application that empowered analysts to generate lineage models from natural language prompts. Users could enter plain-English instructions (e.g., "Show a lineage between users and their purchases over the past 2 years") and optionally select relevant tables from the connected Postgres database. The input was processed using an LLM (configurable to use OpenAI APIs or local Ollama models), which generated an optimised SQL query to fetch the required data. The resulting table was displayed within the app and immediately passed to the next step: a drag-and-drop visual interface where users could configure the Solidatus lineage model template. This UI mapped each column to lineage-specific fields (e.g., Source Entity, Target Attribute, etc.) using a predefined structure. Once the user finished configuring the mapping, the app converted it into a Solidatus-compatible JSON config and triggered model creation through the Solidatus API. If changes were needed, users could simply adjust the config via the UI and regenerate the model instantly, without needing any code modifications. The app was designed to be highly extensible, supporting expansion to other output formats or target systems. Modular components allow rapid integration tweaks.</li>
+                        <li><strong>Business Impact:</strong> This solution eliminated the dependency on developers for model prototyping, cutting model preparation time from hours or even days to just minutes. It saved over 200 hours per month in data transformation effort, significantly accelerated prototyping, and allowed SMEs and analysts, even without coding expertise, to experiment and build production-grade lineage models on the fly. The low learning curve, instant feedback loop, and integration with Solidatus made it the go-to tool for all lineage-related transformations in the workflow. It also laid the groundwork for future expansion to other lineage tools or output formats. Empowered analysts to deliver lineage independently.</li>
                         <li><strong>Tech Stack:</strong> Streamlit, OpenAI API / Ollama (LLM), PostgreSQL, Solidatus, Python, Docker</li>
                     </ul> `
             },
@@ -1007,9 +1007,9 @@
                 title: 'Process Documentation and Knowledge Sharing',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Lack of standard documentation made it difficult to reuse solutions and hand over projects.</li>
-                        <li><strong>Solution:</strong> Documented AI tools such as Pro Scraper and Semantic Mapper, and produced reusable code patterns and templates.</li>
-                        <li><strong>Business Impact:</strong> Standardised documentation eased future handovers and encouraged solution reuse.</li>
+                        <li><strong>Problem:</strong> Lack of standard documentation made it difficult to reuse solutions and hand over projects. Tribal knowledge led to repeated mistakes.</li>
+                        <li><strong>Solution:</strong> Documented AI tools such as Pro Scraper and Semantic Mapper, and produced reusable code patterns and templates. Guides capture best practices for reuse.</li>
+                        <li><strong>Business Impact:</strong> Standardised documentation eased future handovers and encouraged solution reuse. Consistent docs sped new team onboarding.</li>
                         <li><strong>Tech Stack:</strong> Markdown, Python, Knowledge Management Tools</li>
                     </ul> `
             },
@@ -1018,9 +1018,9 @@
                 title: 'Hands-on Technical Training and Enablement',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Teams needed practical exposure to Python, Streamlit and AI agent tools.</li>
-                        <li><strong>Solution:</strong> Ran workshops and pairing sessions with live demos building solutions on the fly.</li>
-                        <li><strong>Business Impact:</strong> Increased team confidence and accelerated prototyping efforts.</li>
+                        <li><strong>Problem:</strong> Teams needed practical exposure to Python, Streamlit and AI agent tools. Lack of hands-on practice limited adoption.</li>
+                        <li><strong>Solution:</strong> Ran workshops and pairing sessions with live demos building solutions on the fly. Exercises featured real-world business scenarios.</li>
+                        <li><strong>Business Impact:</strong> Increased team confidence and accelerated prototyping efforts. Staff quickly applied skills to projects.</li>
                         <li><strong>Tech Stack:</strong> Python, Streamlit, AI Agent Frameworks</li>
                     </ul> `
             },
@@ -1029,9 +1029,9 @@
                 title: 'Stakeholder & Client Collaboration',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Ensuring solutions met business priorities required close collaboration and clear requirements.</li>
-                        <li><strong>Solution:</strong> Gathered requirements with business users and product owners and presented prototypes for alignment.</li>
-                        <li><strong>Business Impact:</strong> Helped map lineage, transformation and automation use cases that matched stakeholder needs.</li>
+                        <li><strong>Problem:</strong> Ensuring solutions met business priorities required close collaboration and clear requirements. Past misalignment caused rework and delays.</li>
+                        <li><strong>Solution:</strong> Gathered requirements with business users and product owners and presented prototypes for alignment. Iterative demos ensured requirements stayed accurate.</li>
+                        <li><strong>Business Impact:</strong> Helped map lineage, transformation and automation use cases that matched stakeholder needs. Clear goals accelerated delivery and adoption.</li>
                         <li><strong>Tech Stack:</strong> Workshops, Prototyping Tools, Data Lineage Platforms</li>
                     </ul> `
             }
