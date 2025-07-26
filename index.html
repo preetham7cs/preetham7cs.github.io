@@ -456,12 +456,17 @@
             .hero-right {
                 align-items: center;
             }
+            .skills-block {
+                grid-template-columns: repeat(3, 1fr);
+            }
 
         }
 
         @media (max-width: 600px) {
             .nav-links {
                 gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .hero-name {
@@ -480,6 +485,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .skills-block {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .contact-links {
                 flex-direction: column;
                 align-items: center;
@@ -490,9 +499,36 @@
                 align-items: center;
             }
 
+            .interesting-links img {
+                width: 200px;
+                height: 200px;
+            }
+
             .modal-content {
                 padding: 2rem;
                 margin: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-right h2 {
+                font-size: 1.4rem;
+            }
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .skills-block {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .interesting-links img {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
