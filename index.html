@@ -818,9 +818,9 @@
                 content: `
                     <ul>
                         <li><strong>Problem:</strong> Insurer portals had dynamic layouts and no export option, forcing weeks of fragile copy/paste or custom JavaScript to capture question sets. Manual steps frequently produced errors.</li>
-                        <li><strong>Solution:</strong> Containerised Streamlit app sends pasted HTML to ChatGPT preloaded with our schema, returning questions and logic in Excel and JSON with a quick human review step. Ensures consistent parsing and reliability.</li>
-                        <li><strong>Business Impact:</strong> Reduced extraction time from 1–2 weeks to 1–2 days and removed the need for specialised scripting. Accelerated onboarding for insurer clients.</li>
-                        <li><strong>Tech Stack:</strong> Streamlit, OpenAI API (GPT‑4o‑mini), Python, Docker, Excel/JSON</li>
+                        <li><strong>Solution:</strong> Orchestrated a multi‑agent workflow: a scraping agent parsed the pasted HTML, a semantic agent aligned data to our schema, and a feedback agent logged edge cases to Airtable. A fourth agent fine‑tuned suggestions locally as the knowledge base grew, with the option to swap between proprietary and open‑source LLMs for privacy.</li>
+                        <li><strong>Business Impact:</strong> Automated pipeline shrank extraction and mapping from weeks to days, dropping the end‑to‑end timeline from 4 weeks to just 3 days. Dockerised rollout with clear documentation and training embedded the tool across the company.</li>
+                        <li><strong>Tech Stack:</strong> Streamlit, Python, Airtable, Docker, OpenAI API/Local LLMs, Excel/JSON</li>
                     </ul>
                 `
             },
@@ -829,9 +829,9 @@
                 content: `
                     <ul>
                         <li><strong>Problem:</strong> Insurers listed hundreds of trades with inconsistent naming, making alignment to our master list slow and error‑prone. Confusion wasted time for analysts.</li>
-                        <li><strong>Solution:</strong> Streamlit tool filters exact matches then sends the rest to ChatGPT, combining classical similarity scores with LLM reasoning to suggest the closest master trade and risk level for review. Streamlines manual checks and reviews.</li>
-                        <li><strong>Business Impact:</strong> Mapping time dropped from 4 weeks to 2 days while boosting accuracy and reducing analyst workload. Freed analysts for complex work.</li>
-                        <li><strong>Tech Stack:</strong> Python (fuzzywuzzy, Jaccard, cosine, Jaro‑Winkler), OpenAI API, Streamlit, pandas, Docker, Excel/JSON</li>
+                        <li><strong>Solution:</strong> Implemented a multi‑agent mapping pipeline: an exact‑match agent cleared obvious cases, a semantic agent combined classical similarity scores with LLM reasoning for the rest, and a review agent captured analyst feedback in Airtable. A training agent fine‑tuned the model each cycle and could switch between proprietary and open‑source LLMs to meet data‑privacy needs.</li>
+                        <li><strong>Business Impact:</strong> Together with Pro Scraper, the automated workflow cut trade mapping from 4 weeks to 3 days while delivering high‑precision results. Docker packaging, documentation and hands‑on training embedded the process into day‑to‑day operations.</li>
+                        <li><strong>Tech Stack:</strong> Python (fuzzywuzzy, Jaccard, cosine, Jaro‑Winkler), Streamlit, Airtable, Docker, OpenAI API/Local LLMs, pandas, Excel/JSON</li>
                     </ul>
                 `
             },
