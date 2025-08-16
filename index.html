@@ -1066,12 +1066,19 @@
             'claude-reports': {
                 title: 'Automated Workflow for Claude-Powered Compliance Reporting',
                 content: `
-                   <ul>
-                      <li><strong>Problem:</strong> Legacy models, methodology documents and R scripts lacked a consistent mapping of relationships, hindering automation. Documentation lacked structure for automation.</li>
-                      <li><strong>Solution:</strong> Developed a Claude-based multi-step process to extract and link unstructured elements into structured relationship tables. Pipeline organised data for quick analysis.</li>
-                      <li><strong>Business Impact:</strong> Reduced manual effort and inconsistency by accelerating cross-component mapping and improving system integration. Faster insights drove updates to models.</li>
-                      <li><strong>Tech Stack:</strong> Claude LLM, Python, R</li>
-                   </ul> `
+                    <ul>
+                        <li><strong>Problem:</strong> Over years of operation, a large financial organisation had accumulated legacy desktop models, methodology documents, and R scripts, all of which were deeply interconnected but scattered across systems. There was no consistent mapping structure to show how these elements related to one another. To complicate matters, element names often changed across systems due to transformations, making it extremely difficult to trace dependencies or establish accurate mappings. Manual efforts to map and reconcile these relationships were slow, error-prone, and nearly impossible to scale, blocking automation and slowing updates to critical models.</li>
+                        <li><strong>Solution:</strong>
+                            <ul>
+                                <li>The workflow traversed desktop models, methodology documents, and R scripts, identifying elements and transformations</li>
+                                <li>A mapping agent linked them into structured relationship tables that exposed dependencies across systems</li>
+                                <li>An iterative refinement loop reduced hallucinations and false mappings, with guardrails and improved requirement descriptions to ensure accuracy</li>
+                                <li>The pipeline produced a tabular compliance report that clearly showed connections between models, scripts, and methodologies, enabling faster understanding and review</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Impact:</strong> The solution cut down manual mapping efforts significantly, reducing errors and inconsistencies while accelerating system integration. By providing structured, trustworthy reports, it enabled analysts to generate insights faster, improving both compliance oversight and model updates. What once required painstaking manual reconciliation was transformed into a scalable, repeatable workflow powered by Claude.</li>
+                        <li><strong>Tech Stack:</strong> Claude, Python, R, Streamlit, PDF, docx</li>
+                    </ul> `
             },
 
             'instant-graph': {
