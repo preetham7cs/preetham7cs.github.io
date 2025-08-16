@@ -822,9 +822,18 @@
                 title: 'Agentic Pro Scraper – Automated Insurer Portal Data Extraction',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Insurer portals had dynamic layouts and no export option, forcing weeks of fragile copy/paste or custom JavaScript to capture question sets. Manual steps frequently produced errors.</li>
-                        <li><strong>Solution:</strong> Orchestrated a multi‑agent workflow: a scraping agent parsed the pasted HTML, a semantic agent aligned data to our schema, and a feedback agent logged edge cases to Airtable. A fourth agent fine‑tuned suggestions locally as the knowledge base grew, with the option to swap between proprietary and open‑source LLMs for privacy.</li>
-                        <li><strong>Business Impact:</strong> Automated pipeline shrank extraction and mapping from weeks to days, dropping the end‑to‑end timeline from 4 weeks to just 3 days. Dockerised rollout with clear documentation and training embedded the tool across the company.</li>
+                        <li><strong>Problem:</strong> Extracting question sets from insurer portals was slow and fragile. Each portal had a different layout and no export option, so teams spent up to two weeks manually copying content or using ad‑hoc JavaScript. Errors were common and business users relied heavily on developers for fixes, with no central, repeatable workflow.</li>
+                        <li><strong>Solution:</strong>
+                            <ul>
+                                <li>An extraction agent parsed raw HTML content from insurer portals</li>
+                                <li>The extracted data was aligned to a predefined template</li>
+                                <li>Multiple validation checks ensured no data was missed or hallucinated</li>
+                                <li>An integration agent pushed clean data into Airtable for downstream mapping</li>
+                                <li>Logging, tracing and versioning provided full observability for continuous improvement</li>
+                                <li>A Streamlit interface let non‑technical users run the workflow without developers</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Impact:</strong> The workflow cut the process from 2 weeks to 2 days, eliminated errors and reduced reliance on specialist staff. Business users could operate it independently, accelerating onboarding and letting mapping and pricing begin almost immediately.</li>
                         <li><strong>Tech Stack:</strong> Streamlit, Python, Airtable, Docker, OpenAI API/Local LLMs, Excel/JSON</li>
                     </ul>
                 `
@@ -833,9 +842,18 @@
                 title: 'Agentic Semantic Mapper – High-Precision Trade Term Matching',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Insurers listed hundreds of trades with inconsistent naming, making alignment to our master list slow and error‑prone. Confusion wasted time for analysts.</li>
-                        <li><strong>Solution:</strong> Implemented a multi‑agent mapping pipeline: an exact‑match agent cleared obvious cases, a semantic agent combined classical similarity scores with LLM reasoning for the rest, and a review agent captured analyst feedback in Airtable. A training agent fine‑tuned the model each cycle and could switch between proprietary and open‑source LLMs to meet data‑privacy needs.</li>
-                        <li><strong>Business Impact:</strong> Together with Agentic Pro Scraper, the automated workflow cut trade mapping from 4 weeks to 3 days while delivering high‑precision results. Docker packaging, documentation and hands‑on training embedded the process into day‑to‑day operations.</li>
+                        <li><strong>Problem:</strong> Insurers published hundreds of trade descriptions with inconsistent and ambiguous names. Traditional techniques such as fuzzy matching, Jaccard, cosine and Jaro‑Winkler hit diminishing returns, leaving analysts to spend up to 4 weeks reconciling mismatches and delaying onboarding.</li>
+                        <li><strong>Solution:</strong>
+                            <ul>
+                                <li>An exact‑match agent quickly handled obvious matches</li>
+                                <li>A semantic agent combined similarity metrics with LLM reasoning for the remaining terms</li>
+                                <li>Multiple validation cycles with tailored prompts checked correctness, match risk and potential errors</li>
+                                <li>An analyst review agent captured human feedback directly in Airtable</li>
+                                <li>A training agent fine‑tuned models locally each cycle and switched between proprietary and open‑source LLMs to meet privacy needs</li>
+                                <li>Iterative, feedback‑driven workflow ensured precision while Airtable stored mappings, logs and refinements</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Impact:</strong> Mapping timelines dropped from 4 weeks to 3 days with high‑precision results and fewer analyst reviews. Together with Pro Scraper it underpinned a streamlined onboarding pipeline, and dockerised deployment with training embedded it as a scalable, low‑maintenance process.</li>
                         <li><strong>Tech Stack:</strong> Python (fuzzywuzzy, Jaccard, cosine, Jaro‑Winkler), Streamlit, Airtable, Docker, OpenAI API/Local LLMs, pandas, Excel/JSON</li>
                     </ul>
                 `
