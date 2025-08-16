@@ -862,10 +862,18 @@
                 title: 'Intelligent Browser Automation – Dynamic Web Navigation',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Custom RPA scripts were required for each insurer site, resulting in long build cycles and fragile maintenance. Scripts were brittle and costly.</li>
-                        <li><strong>Solution:</strong> Built an "Adaptive Browser Agent" that combines automation APIs with a multimodal LLM to interpret pages and execute plain‑English commands. Adapts quickly across varied page layouts.</li>
-                        <li><strong>Business Impact:</strong> Demonstrated an end-to-end quoting flow, leading to a re-evaluation of future automation tooling towards this flexible ML-driven approach. Cuts automation build time dramatically.</li>
-                        <li><strong>Tech Stack:</strong> Automation APIs, Multimodal LLM, RPA Scripts, Python</li>
+                        <li><strong>Problem:</strong> In the extranet-aggregator quoting flow, each insurer portal required bespoke RPA scripts. These scripts were fragile, slow to build, and costly to maintain, breaking whenever page layouts or dynamic elements changed. The process demanded long development cycles and constant patching, creating delays and high maintenance overhead. Business teams relied heavily on developers to implement fixes, stalling progress and limiting flexibility.</li>
+                        <li><strong>Solution:</strong>
+                            <ul>
+                                <li>Developed an Adaptive Browser Agent that combined modern automation APIs with a multimodal LLM capable of "seeing" the page</li>
+                                <li>The agent interpreted dynamic layouts and executed plain-English instructions such as "fill quote form" or "fetch price", converting them into executable clicks, keystrokes, and waits</li>
+                                <li>Its no-code, LLM-driven design made it adaptable to unseen page structures without requiring new scripts</li>
+                                <li>Partnered with stakeholders to map pain points and success criteria, ensuring coverage of critical quoting flows</li>
+                                <li>Delivered a live end-to-end demo of quote generation, along with knowledge-transfer sessions for onboarding teams</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Impact:</strong> The Adaptive Browser Agent dramatically reduced automation build time and eliminated the fragility of script-heavy approaches. By showcasing its ability to navigate complex quoting flows in real time, the project prompted leadership to rethink future automation tooling, moving toward flexible, ML-driven methods instead of traditional RPA. The solution not only cut development costs but also proved the viability of no-code automation for insurer onboarding.</li>
+                        <li><strong>Tech Stack:</strong> Automation APIs, Multimodal LLM, Python, RPA Scripts</li>
                     </ul>
                 `
             },
