@@ -884,10 +884,20 @@
                 title: 'Intelligent Business Rule Automation – Code &amp; Testcase Orchestration',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Insurer portals relied on large JavaScript codebases for calculations, flows and validations. Manual coding slowed updates significantly.</li>
-                        <li><strong>Solution:</strong> Created an automated converter in Python using a local LLM to transform structured rules into validated JavaScript, JSON parameters and tests. Auto-generation reduced mistakes and effort.</li>
-                        <li><strong>Business Impact:</strong> Cut implementation from two weeks to two days while keeping processing secure on local infrastructure. Enabled rapid changes without extra risk.</li>
-                        <li><strong>Tech Stack:</strong> Python, Local LLM, JavaScript, JSON</li>
+                        <li><strong>Problem:</strong> Mapping insurer question sets to the company’s master set involved handling hundreds of calculated values and business rules. These rules, written in pseudo-code or plain English, defined how to transform data from master inputs to insurer-specific formats. The process required analysts to interpret each rule, then developers to translate it into production-ready JavaScript with corresponding test cases. This cycle was slow, monotonous, and error-prone, stretching across sprints. Developer bandwidth became a bottleneck, and maintaining consistency across rulesets consumed significant time and resources.</li>
+                        <li><strong>Solution:</strong>
+                            <ul>
+                                <li>An extraction agent ingested pseudo-code or plain-text rules</li>
+                                <li>A conversion agent generated equivalent JavaScript logic</li>
+                                <li>A parameter agent ensured that the correct product variables and schema alignment were applied in the code</li>
+                                <li>A test generation agent created multiple test cases per rule to validate correctness and edge cases</li>
+                                <li>Output was then pushed into Airtable for human verification, where tests could be run and results quickly reviewed</li>
+                                <li>An observability layer captured logs, traces, and versioning for full transparency and auditability</li>
+                                <li>Automation handled conversions and testing, leaving humans only to verify edge cases</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Impact:</strong> The solution cut the rule implementation time by 50%, turning a process that previously required weeks of developer effort into a workflow business analysts could manage with minimal technical input. It also reduced dependency on large dev teams, saved resources, and became the standard way of working for new rule onboarding. Beyond time savings, the observability layer ensured quality and trust, embedding the workflow as a low-risk, high-impact solution across teams.</li>
+                        <li><strong>Tech Stack:</strong> Python, Local LLMs, JavaScript, Airtable, JSON</li>
                     </ul>
                 `
             },
