@@ -1060,9 +1060,18 @@
                 title: 'Agentic Data-to-Graph UI – Real-Time Postgres-to-Lineage Mapping',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Building lineage prototypes required slow, manual hops between data SMEs, business stakeholders and developers. Source data exposed through a virtual Postgres layer had to be repeatedly re-shaped and re-interpreted to fit Solidatus, with analysts hand-crafting joins and transferring multi-level requirements in spreadsheets. This handover-heavy process stifled experimentation and delayed delivery whenever datasets or requirements changed.</li>
-                        <li><strong>Solution:</strong> Delivered an agentic workflow composed of specialised agents for query translation, ingestion, transformation and lineage modelling. A query agent converted natural language requests into SQL, an ingestion agent streamed results directly from Postgres, and a modelling agent mapped the output to Solidatus templates. A monitoring and versioning layer logged every prompt and response, enabling A/B testing and continuous optimisation. The framework could seamlessly swap between proprietary APIs and open-source models like Ollama based on project needs. Users interacted through a Streamlit UI that displayed results in real time and offered a drag-and-drop canvas to adjust mappings before pushing configs to Solidatus.</li>
-                        <li><strong>Business Impact:</strong> The autonomous pipeline removed developer bottlenecks, letting analysts and SMEs experiment independently and cut model preparation from days to minutes. Logging and version control created an audit trail and knowledge base for further improvement while the streamlined workflow saved over 200 hours of manual effort each month.</li>
+                        <li><strong>Problem:</strong> Building lineage prototypes was a slow, fragmented process. Data SMEs, business stakeholders, and developers had to pass spreadsheets back and forth, with each handover introducing delays and errors. Source data came from a virtual Postgres layer, but reshaping it to fit Solidatus required repeated manual effort: analysts hand-crafted joins, restructured tables, and documented requirements in multi-level Excel sheets. Whenever datasets or requirements changed, the cycle had to start over. This manual, handover-heavy approach stifled experimentation and made it nearly impossible to iterate quickly.</li>
+                        <li><strong>Solution:</strong> Developed an agentic workflow that automated query generation, ingestion, transformation, and lineage modelling:
+                            <ul>
+                                <li>A query agent translated natural language requests into SQL</li>
+                                <li>An ingestion agent streamed results directly from Postgres</li>
+                                <li>A modelling agent mapped output to Solidatus templates for lineage representation</li>
+                                <li>A monitoring and versioning layer logged all prompts, responses, and lineage changes, enabling A/B testing, audit trails, and iterative optimisation</li>
+                                <li>The framework dynamically swapped between proprietary APIs and open-source models (via Ollama) to balance cost, speed, and privacy needs</li>
+                                <li>End users interacted via a Streamlit UI that displayed lineage graphs in real time. A drag-and-drop canvas let analysts refine mappings visually before pushing them to Solidatus.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Impact:</strong> The solution eliminated developer bottlenecks, empowering analysts and SMEs to build lineage models independently. What previously took days was reduced to minutes, with over 200 hours of manual effort saved each month. Built-in logging and version control created a reusable knowledge base, while the flexible framework accelerated both experimentation and delivery of lineage prototypes.</li>
                         <li><strong>Tech Stack:</strong> Streamlit, OpenAI API / Ollama, PostgreSQL, Solidatus, Python, Docker</li>
                     </ul> `
             },
