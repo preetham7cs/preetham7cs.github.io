@@ -595,7 +595,7 @@
                 </div>
 
                 <div class="project-tile" data-project="rag-interface">
-                    <h3>AI-Powered RAG Interface – A self-service platform for all Q&amp;A</h3>
+                    <h3>AI-Powered RAG Interface – A Self-Service Platform for Q&amp;A</h3>
                     <img src="images/17.jpg" alt="AI-Powered RAG Interface">
                 </div>
 
@@ -975,17 +975,26 @@
                     </ul>
                 `
             },
+            
             'rag-interface': {
-                title: 'AI-Powered RAG Interface – A self-service platform for all Q&A',
+                title: 'AI-Powered RAG Interface – A Self-Service Platform for Q&A',
                 content: `
                     <ul>
-                        <li><strong>Problem:</strong> Internal tools lacked public documentation or community support, forcing new hires to rely on a few experts and sift through extensive policies and procedures.</li>
-                        <li><strong>Solution:</strong> Built a RAG-based platform using LangChain and LangGraph with a vector database, paired with a Streamlit UI that lets users choose a tool or domain and ask questions for instant answers.</li>
-                        <li><strong>Business Impact:</strong> Cut onboarding time by 70%, freeing mentors and accelerating new employee productivity.</li>
-                        <li><strong>Tech Stack:</strong> LangChain, LangGraph, vector database, Streamlit</li>
+                        <li><strong>Problem:</strong> The company relied on several internal tools with no public documentation or community support. New employees had to self-train, often struggling to learn from scattered internal documents, policies, and operational guidelines. Only a small group of experts could provide guidance, meaning onboarding required significant time allocation from mentors. This bottleneck slowed down productivity, delayed project contributions, and forced both new hires and experienced staff to spend time answering repetitive questions instead of focusing on core tasks.</li>
+                        <li><strong>Solution:</strong> Designed and deployed an RAG-based platform that turned scattered internal knowledge into a self-service assistant:
+                            <ul>
+                                <li>Built with LangChain and LangGraph to orchestrate retrieval and reasoning</li>
+                                <li>Leveraged a vector database to index tool documentation, policies, and procedures for fast semantic search</li>
+                                <li>Delivered a Streamlit UI where users could select a tool or domain and ask natural language questions to receive instant, context-aware answers</li>
+                                <li>The system covered both technical tools and organisational knowledge (policies, data handling practices, operations), reducing dependency on human experts</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Impact:</strong> The platform cut onboarding time by 70%, enabling new hires to become productive faster while freeing experts from repetitive guidance. The self-service model allowed employees to quickly resolve both small and complex queries without delays, improving efficiency across teams and significantly reducing the cost of onboarding.</li>
+                        <li><strong>Tech Stack:</strong> LangChain, LangGraph, Vector Database, Streamlit</li>
                     </ul>
-                `
-            },
+                `,
+            }
+
             'gemini-finetune': {
                 title: 'Autonomous Email Handling – Gemini-Optimized Support Workflows',
                 content: `
