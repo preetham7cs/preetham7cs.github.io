@@ -574,6 +574,11 @@
     <div class="group-container">
         <div class="group-projects">
             <div class="projects-grid">
+                <div class="project-tile" data-project="ai-observer-platform">
+                    <h3>Multi-Persona Conversational AI Platform – AI Observer Group Chats</h3>
+                    <img src="images/ai-observer-architecture.svg" alt="Multi-Persona Conversational AI Platform architecture">
+                </div>
+
                 <div class="project-tile" data-project="instant-graph">
                     <h3>Agentic Data-to-Graph UI – Real-Time Postgres-to-Lineage Mapping</h3>
                     <img src="images/7.jpg" alt="Agentic Data-to-Graph UI">
@@ -818,6 +823,17 @@
         // Project details data
 
         const projectDetails = {
+            'ai-observer-platform': {
+                title: 'Multi-Persona Conversational AI Platform – AI Observer Group Chats',
+                content: `
+                    <ul>
+                        <li>Led end-to-end design and hands-on development of a multi-persona conversational AI platform supporting User, Seller, Influencer, and AI Observer group chats.</li>
+                        <li>Architected and implemented an AI Observer system using AWS Bedrock, Titan embeddings, OpenSearch vector DB, and metadata-driven RAG pipelines, with MCP-based exposure of resources and tools.</li>
+                        <li>Built scalable ingestion, cleaning, embedding, and retrieval pipelines for large product catalogues using S3, Lambda, Bedrock, and OpenSearch hybrid search.</li>
+                        <li>Developed multi-participant conversation memory, summarisation, and intent-based intervention logic with API-driven chat flows and strict non-intrusive AI behaviour.</li>
+                    </ul>
+                `
+            },
             'pro-scraper': {
                 title: 'Agentic Pro Scraper – Automated Insurer Portal Data Extraction',
                 content: `
