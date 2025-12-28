@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Multi-Persona Conversational AI Platform Architecture</title>
+  <desc id="desc">Diagram showing chat interface, API gateway, websocket app, AI reasoning core, vector database, and S3 bucket.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b14e32" />
+    </marker>
+  </defs>
+  <rect width="1200" height="720" fill="#f8f5ef" />
+  <g fill="none" stroke="#e6e0d6" stroke-width="1">
+    <path d="M0 60 H1200" />
+    <path d="M0 120 H1200" />
+    <path d="M0 180 H1200" />
+    <path d="M0 240 H1200" />
+    <path d="M0 300 H1200" />
+    <path d="M0 360 H1200" />
+    <path d="M0 420 H1200" />
+    <path d="M0 480 H1200" />
+    <path d="M0 540 H1200" />
+    <path d="M0 600 H1200" />
+    <path d="M0 660 H1200" />
+    <path d="M60 0 V720" />
+    <path d="M120 0 V720" />
+    <path d="M180 0 V720" />
+    <path d="M240 0 V720" />
+    <path d="M300 0 V720" />
+    <path d="M360 0 V720" />
+    <path d="M420 0 V720" />
+    <path d="M480 0 V720" />
+    <path d="M540 0 V720" />
+    <path d="M600 0 V720" />
+    <path d="M660 0 V720" />
+    <path d="M720 0 V720" />
+    <path d="M780 0 V720" />
+    <path d="M840 0 V720" />
+    <path d="M900 0 V720" />
+    <path d="M960 0 V720" />
+    <path d="M1020 0 V720" />
+    <path d="M1080 0 V720" />
+    <path d="M1140 0 V720" />
+  </g>
+
+  <rect x="60" y="260" width="200" height="150" rx="16" fill="#ffd6d1" stroke="#1f1b1b" stroke-width="3" />
+  <text x="160" y="325" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#1f1b1b">CHAT</text>
+  <text x="160" y="352" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#1f1b1b">INTERFACE</text>
+
+  <rect x="300" y="300" width="110" height="70" rx="10" fill="#f2a7c4" stroke="#1f1b1b" stroke-width="2" />
+  <text x="355" y="340" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#1f1b1b">API Gateway</text>
+  <text x="355" y="358" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1f1b1b">(WS)</text>
+
+  <rect x="450" y="265" width="170" height="140" rx="12" fill="#cfe5ff" stroke="#1f1b1b" stroke-width="2" />
+  <text x="535" y="305" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#1f1b1b">Websocket App</text>
+  <text x="535" y="325" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1f1b1b">EC2 Listener</text>
+  <rect x="505" y="340" width="60" height="45" rx="6" fill="#ffb062" stroke="#1f1b1b" stroke-width="2" />
+
+  <rect x="690" y="230" width="300" height="220" rx="20" fill="#e6ffe0" stroke="#1f1b1b" stroke-width="3" />
+  <text x="840" y="270" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#1f1b1b">AI Reasoning Core</text>
+  <rect x="720" y="310" width="120" height="90" rx="14" fill="#ffffff" stroke="#1f1b1b" stroke-width="2" />
+  <text x="780" y="350" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#1f1b1b">AWS Bedrock</text>
+  <text x="780" y="368" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#1f1b1b">Memory</text>
+  <rect x="860" y="310" width="110" height="90" rx="14" fill="#ffffff" stroke="#1f1b1b" stroke-width="2" />
+  <text x="915" y="350" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#1f1b1b">Observer</text>
+  <text x="915" y="368" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#1f1b1b">Logic</text>
+
+  <rect x="760" y="70" width="140" height="90" rx="14" fill="#efe6ff" stroke="#1f1b1b" stroke-width="2" />
+  <text x="830" y="108" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#1f1b1b">Vector DB</text>
+  <text x="830" y="126" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#1f1b1b">OpenSearch</text>
+
+  <rect x="980" y="70" width="160" height="90" rx="14" fill="#e9f2c2" stroke="#1f1b1b" stroke-width="2" />
+  <text x="1060" y="105" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#1f1b1b">S3 Bucket</text>
+  <text x="1060" y="125" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#1f1b1b">catalogues &amp; metadata</text>
+
+  <rect x="540" y="90" width="140" height="70" rx="10" fill="#ffe6f4" stroke="#1f1b1b" stroke-width="2" />
+  <text x="610" y="120" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#1f1b1b">PostgreSQL</text>
+  <text x="610" y="138" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#1f1b1b">Persona metadata</text>
+
+  <path d="M260 335 H300" stroke="#b14e32" stroke-width="3" marker-end="url(#arrow)" />
+  <path d="M410 335 H450" stroke="#b14e32" stroke-width="3" marker-end="url(#arrow)" />
+  <path d="M620 335 H690" stroke="#b14e32" stroke-width="3" marker-end="url(#arrow)" />
+  <path d="M830 160 V230" stroke="#b14e32" stroke-width="3" marker-end="url(#arrow)" />
+  <path d="M1060 160 V240" stroke="#b14e32" stroke-width="3" marker-end="url(#arrow)" />
+  <path d="M610 160 V265" stroke="#b14e32" stroke-width="3" marker-end="url(#arrow)" />
+  <path d="M620 405 H220" stroke="#f07c24" stroke-width="3" marker-end="url(#arrow)" />
+
+  <text x="340" y="290" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#1f1b1b">Websocket</text>
+  <text x="340" y="302" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#1f1b1b">messages</text>
+  <text x="840" y="210" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#1f1b1b">RAG context</text>
+  <text x="1060" y="210" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#1f1b1b">Ingestion</text>
+  <text x="430" y="435" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#1f1b1b">Reasoned action</text>
+</svg>
