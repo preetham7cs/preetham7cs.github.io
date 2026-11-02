@@ -9,535 +9,15 @@
     <link rel="shortcut icon" href="/portfolio-favicon/./favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/portfolio-favicon/./apple-touch-icon.png" />
     <link rel="manifest" href="/portfolio-favicon/./site.webmanifest" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #F2F2F2;
-            color: #000;
-            line-height: 1.6;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #F2F2F2;
-            padding: 1rem 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid #B6B09F;
-        }
-
-        .nav-container {
-            max-width: none;
-            width: 100%;
-            margin: 0;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #000;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #000;
-            font-weight: 400;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #B6B09F;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: #B6B09F;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Main content */
-        main {
-            margin-top: 80px;
-            padding: 2rem 1rem;
-        }
-
-        .container {
-            max-width: none;
-            width: 100%;
-            margin: 0;
-            padding: 0 1rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 6rem 0 6rem;
-        }
-
-        .hero-container {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .hero-left {
-            flex: 1;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-photo-container {
-            text-align: center;
-        }
-
-        .hero-photo {
-            width: 400px;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-
-        .hero-name {
-            font-size: 3rem;
-            font-weight: 300;
-            color: #000;
-        }
-
-        .hero-right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero-right h2 {
-            font-size: 2.2rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            color: #000;
-        }
-
-        .hero .subtitle {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        /* Sections */
-        .section {
-            margin-bottom: 6rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #000;
-        }
-
-        .about-title {
-            text-align: left;
-            margin-bottom: 1.5rem;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0;
-            text-align: left;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #333;
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .group-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: stretch;
-        }
-
-        .group-projects,
-        .group-skills {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .group-projects {
-            flex: none;
-        }
-
-        .group-skills {
-            flex: none;
-        }
-
-        .skills-block {
-            border: 1px solid #B6B09F;
-            padding: 1.5rem;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            min-height: 200px;
-            background: #EAE4D5;
-        }
-
-        .skill-label {
-            font-size: 0.9rem;
-            color: #000;
-            text-align: center;
-        }
-
-        .project-tile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            aspect-ratio: 1 / 1;
-            padding: 1rem;
-            color: #000;
-            cursor: pointer;
-            text-align: center;
-            background: #EAE4D5;
-            transition: background 0.3s ease;
-            font-size: 1rem;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .project-tile:hover {
-            background: linear-gradient(135deg, rgba(182,176,159,0.2), rgba(0,0,0,0));
-        }
-
-
-        .skills-title {
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #000;
-            margin: 0 0 1rem 0;
-        }
-
-
-        .project-tile img {
-            display: block;
-            width: 100%;
-            height: 30%;
-            object-fit: cover;
-            margin-top: auto;
-            border-radius: 8px;
-        }
-
-        .project-tile h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 0;
-            color: #000;
-            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            flex: 1;
-        }
-
-
-
-        /* Project Modal */
-        .project-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            padding: 2rem;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-content {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 12px;
-            padding: 3rem;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.15) inset, 0 4px 20px rgba(0, 0, 0, 0.4);
-            max-width: 800px;
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-            transform: scale(0.8);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .project-modal.active {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        .project-modal.active .modal-content {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .modal-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #fff;
-        }
-
-        .modal-content .project-details {
-            color: #ddd;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .skill-category {
-            padding: 2rem;
-            border: 1px solid #B6B09F;
-            text-align: center;
-            color: #000;
-        }
-
-        .skill-category h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #000;
-        }
-
-        .skill-category ul {
-            list-style: none;
-            color: #333;
-        }
-
-        .skill-category li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .interesting-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .interesting-links img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .contact-links a {
-            text-decoration: none;
-            color: #000;
-            font-weight: 500;
-            padding: 0.8rem 1.5rem;
-            border: 1px solid #B6B09F;
-            border-radius: 0;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 2rem;
-            color: #000;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .hero-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-right {
-                align-items: center;
-            }
-            .skills-block {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-        }
-
-        @media (max-width: 600px) {
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-name {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-            .hero-photo {
-                width: 150px;
-                height: 150px;
-            }
-            .hero-right h2 {
-                font-size: 1.6rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-block {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .interesting-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .interesting-links img {
-                width: 200px;
-                height: 200px;
-            }
-
-            .modal-content {
-                padding: 2rem;
-                margin: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-right h2 {
-                font-size: 1.4rem;
-            }
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-
-            .skills-block {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links a {
-                font-size: 0.8rem;
-            }
-
-            .interesting-links img {
-                width: 150px;
-                height: 150px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="editorial.css">
 </head>
 <body>
-    <nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#" class="logo">PS</a>
-            <ul class="nav-links">
+            <a href="#about" class="logo"><span class="monogram">PS</span><span class="identity">Preetham Shylendhra<small>Data &amp; AI Engineer</small></span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu</button>
+            <ul class="nav-links" id="navigation">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -547,18 +27,18 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main">
         <div class="container">
             <section class="hero" id="about">
+                <p class="eyebrow">Applied AI · Systems · Automation</p>
                 <div class="hero-container">
                     <div class="hero-left">
-                        <div class="hero-photo-container">
-                            <img src="Photo/profilephoto.jpg" alt="Preetham Shylendhra" class="hero-photo">
-                            <h1 class="hero-name">PREETHAM<br>SHYLENDHRA</h1>
-                        </div>
+                        <h1 class="hero-name">Preetham<span>Shylendhra.</span></h1>
+                        <p class="hero-role">Data &amp; AI Engineer</p>
+                        <div class="hero-actions"><a href="#projects">Explore my work <span class="inline-arrow downward" aria-hidden="true"></span></a><a href="#contact">Get in touch <span class="inline-arrow" aria-hidden="true"></span></a></div>
                     </div>
                     <div class="hero-right">
-                        <h2>Data &amp; AI Engineer</h2>
+                        <img src="Photo/profilephoto.jpg" alt="Preetham Shylendhra" class="hero-photo" width="64" height="64">
                         <p class="subtitle">If it doesn’t need Human Creativity, I automate it so we can focus on work that actually matters.</p>
                         <h2 class="section-title about-title">About</h2>
                         <div class="about-content">
@@ -566,6 +46,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="hero-bottom"><span>Engineering across data &amp; AI</span><span>Fintech / Insurance / Regulatory</span><span>Scroll to explore ↓</span></div>
             </section>
 
 
@@ -805,15 +286,16 @@
     </main>
 
     <!-- Project Modal -->
-    <div class="project-modal" id="projectModal">
+    <dialog class="project-modal" id="projectModal" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <button class="close-btn" onclick="closeModal()">&times;</button>
-            <h3 id="modalTitle">Project Title</h3>
+            <button class="close-btn" type="button" aria-label="Close project details" autofocus>&times;</button>
+            <p class="dialog-label">Project / Engineering notes</p>
+            <h2 id="modalTitle">Project Title</h2>
             <div class="project-details" id="modalContent">
                 Project details will appear here...
             </div>
         </div>
-    </div>
+    </dialog>
 
     <footer>
         <p>&copy; 2025 Preetham. All rights reserved.</p>
@@ -1161,81 +643,7 @@
 
             
         };
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for section animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Project modal functionality
-        const modal = document.getElementById('projectModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalContent = document.getElementById('modalContent');
-
-        document.querySelectorAll('.project-tile').forEach(tile => {
-            tile.addEventListener('click', function() {
-                const projectKey = this.dataset.project;
-                const project = projectDetails[projectKey];
-                
-                if (project) {
-                    modalTitle.textContent = project.title;
-                    modalContent.innerHTML = project.content;
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal on background click
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Close modal on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
-
-        // Add some initial animation delay
-        setTimeout(() => {
-            document.querySelector('.hero').style.opacity = '1';
-            document.querySelector('.hero').style.transform = 'translateY(0)';
-        }, 100);
     </script>
+    <script src="interactions.js"></script>
 </body>
 </html>
