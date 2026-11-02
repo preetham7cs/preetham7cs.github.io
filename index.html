@@ -38,7 +38,7 @@
                         <div class="hero-actions"><a href="#projects">Explore my work <span class="inline-arrow downward" aria-hidden="true"></span></a><a href="#contact">Get in touch <span class="inline-arrow" aria-hidden="true"></span></a></div>
                     </div>
                     <div class="hero-right">
-                        <img src="Photo/profilephoto.jpg" alt="Preetham Shylendhra" class="hero-photo" width="76" height="76">
+                        <img src="Photo/profilephoto.jpg" alt="Preetham Shylendhra" class="hero-photo" width="150" height="150">
                         <p class="subtitle">If it doesn’t need Human Creativity, I automate it so we can focus on work that actually matters.</p>
                         <h2 class="section-title about-title">About</h2>
                         <div class="about-content">
@@ -56,7 +56,7 @@
         <div class="group-projects">
             <div class="projects-grid">
                 <div class="project-tile" data-project="ai-observer-platform">
-                    <h3>Multi-Persona Conversational AI Platform – AI Observer Group Chats</h3>
+                    <h3>Multi-Persona Conversational AI Platform</h3>
                     <img src="images/12.jpg" alt="Multi-Persona Conversational AI Platform architecture">
                 </div>
 
@@ -306,13 +306,21 @@
 
         const projectDetails = {
             'ai-observer-platform': {
-                title: 'Multi-Persona Conversational AI Platform – AI Observer Group Chats',
+                title: 'Multi-Persona Conversational AI Platform',
                 content: `
                     <ul>
-                        <li>Led end-to-end design and hands-on development of a multi-persona conversational AI platform supporting User, Seller, Influencer, and AI Observer group chats.</li>
-                        <li>Architected and implemented an AI Observer system using AWS Bedrock, Titan embeddings, OpenSearch vector DB, and metadata-driven RAG pipelines, with MCP-based exposure of resources and tools.</li>
-                        <li>Built scalable ingestion, cleaning, embedding, and retrieval pipelines for large product catalogues using S3, Lambda, Bedrock, and OpenSearch hybrid search.</li>
-                        <li>Developed multi-participant conversation memory, summarisation, and intent-based intervention logic with API-driven chat flows and strict non-intrusive AI behaviour.</li>
+                        <li><strong>Problem:</strong> Coordinating human personas and an AI Observer in long-running conversations required persistent context, controlled agent actions, and relevant retrieval over large-scale product and service data. Production use also required balancing model capability, response latency, and inference cost.</li>
+                        <li><strong>Solution:</strong> Led the design and delivery of a production-grade agentic conversational system supporting User, Seller, Influencer, and AI Observer interactions.
+                            <ul>
+                                <li>Architected an observer-style agent with LangGraph state tracking, memory, clean prompt engineering, and policy-governed action selection, separating reasoning from execution for safety and control.</li>
+                                <li>Developed agent-orchestrated ingestion, cleaning, embedding, and hybrid retrieval workflows over large-scale product catalogues using AWS services, Titan embeddings, OpenSearch vector search, and metadata-driven RAG.</li>
+                                <li>Implemented conversation state, episodic memory, summarisation, and intent-driven intervention and handover mechanisms for complex, long-running dialogues, with strict non-intrusive AI behaviour.</li>
+                                <li>Exposed resources and tools through MCP and integrated API-driven chat flows.</li>
+                                <li>Optimised agent behaviour through trade-offs between model capability, response latency, and inference cost in a live production environment.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Impact:</strong> Delivered a production system enabling coordinated interactions between human personas and an AI Observer, with persistent conversational context, policy-controlled actions, and retrieval over product and service data. Supported complex, long-running dialogues with intent-driven intervention and handover while managing latency and inference cost.</li>
+                        <li><strong>Tech Stack:</strong> LangGraph, AWS EC2, AWS Lambda, DynamoDB, OpenSearch, AWS Bedrock, Titan embeddings, S3, RAG, MCP, APIs</li>
                     </ul>
                 `
             },
