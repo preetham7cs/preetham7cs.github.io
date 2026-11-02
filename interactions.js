@@ -20,7 +20,7 @@ sections.forEach((section, sectionIndex) => {
     const image = tile.querySelector('img');
     const content = document.createElement('div');
     content.innerHTML = project.content;
-    const opening = content.querySelector('li');
+    const opening = content.querySelector('li, p');
     const summary = opening.textContent.replace(/^Problem:\s*/, '').trim();
     const sentence = summary.match(/^.*?[.!?](?:\s|$)/)?.[0] || summary;
     const meta = document.createElement('span');
@@ -31,9 +31,10 @@ sections.forEach((section, sectionIndex) => {
     description.textContent = sentence;
     const bottom = document.createElement('span');
     bottom.className = 'card-bottom';
-    bottom.innerHTML = '<span>Explore project</span><span class="card-arrow" aria-hidden="true"></span>';
+    bottom.innerHTML = `<span>${section.id === 'mentorship' ? 'Explore contribution' : 'Explore project'}</span><span class="card-arrow" aria-hidden="true"></span>`;
     button.append(meta, title, description, bottom);
     button.addEventListener('click', () => {
+      modal.querySelector('.dialog-label').textContent = section.id === 'mentorship' ? 'Contribution / People & delivery' : 'Project / Engineering notes';
       modalTitle.textContent = title.textContent;
       modalContent.innerHTML = project.content;
       const stack = [...modalContent.querySelectorAll('strong')].find(el => el.textContent === 'Tech Stack:');

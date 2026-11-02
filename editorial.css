@@ -218,8 +218,8 @@ main,.container {
 }
 
 .hero-photo {
-  width:150px;
-  height:150px;
+  width:220px;
+  height:220px;
   object-fit:cover;
   border-radius:50%;
   margin-bottom:22px
@@ -757,8 +757,8 @@ body.dialog-open {
 
   .hero-photo {
     margin:0 0 24px;
-    width:130px;
-    height:130px
+    width:220px;
+    height:220px
   }
 
   .subtitle {
